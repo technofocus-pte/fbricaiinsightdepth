@@ -134,12 +134,9 @@ Default storage format	Small dataset storage format
 |Name                   |TrainModel_FabricXX (XX can be a unique number) 	  |
 |Advanced               |Under License mode, select Trial                 	|
 |Default storage format |Small dataset storage format   	                  |
-
      ![](./media/image18.png)
      ![](./media/image19.png)
-
-![A screenshot of a computer Description automatically
-generated](./media/image20.png)
+      ![](./media/image20.png)
 
 5.  Wait for the deployment to complete. It takes 2-3 minutes to
     complete. When your new workspace opens, it should be empty.
@@ -153,32 +150,28 @@ data files you’re going to analyze.
 1.  At the bottom left of the Power BI portal, select the **Power
     BI** icon and switch to the **Data Engineering** experience.
 
-> ![](./media/image21.png)
+     ![](./media/image21.png)
 
 2.  In the **Synapse** **Data engineering** **Home** page, select
     **Lakehouse** under **New** pane.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image22.png)
+      ![](./media/image22.png)
 
 3.  In the **New lakehouse** dialog box, enter
-    +++**TrainModel_Lakehouse+++** in the **Name** field, click on the
+    **+++TrainModel_Lakehouse+++** in the **Name** field, click on the
     **Create** button.
 
-![A screenshot of a computer Description automatically
-generated](./media/image23.png)
+      ![](./media/image23.png)
 
 4.  A new empty lakehouse will be created. You need to ingest some data
     into the **TrainModel_Lakehouse** for analysis.
 
-![A screenshot of a computer Description automatically
-generated](./media/image24.png)
+     ![](./media/image24.png)
 
 5.  Wait for few minutes, you’ll will receive a notification stating -
     **Successfully created SQL endpoint**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image25.png)
+     ![](./media/image25.png)
 
 ## Task 4: Create a notebook
 
@@ -190,29 +183,25 @@ languages) as *experiments*.
     the **Data engineering** icon and switch to the **Data
     science** experience.
 
-> ![](./media/image26.png)
+    ![](./media/image26.png)
 
 2.  In the **Synapse Data Science** **Home** page, select
     **Notebook**under current workspace of **TrainModel_FabricXX.**
 
-![](./media/image27.png)
+     ![](./media/image27.png)
 
 3.  After a few seconds, a new notebook containing a single *cell* will
     open. Notebooks are made up of one or more cells that can
     contain **code** or **markdown** (formatted text).
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image28.png)
+      ![](./media/image28.png)
 
 4.  Select the first cell (which is currently a *code* cell), and then
     in the dynamic tool bar at its top-right, use the **M↓** button to
     convert the cell to a *markdown* cell.
 
-![A screenshot of a computer Description automatically
-generated](./media/image29.png)
-
-![A screenshot of a computer Description automatically
-generated](./media/image30.png)
+      ![](./media/image29.png)
+      ![](./media/image30.png)
 
 When the cell changes to a markdown cell, the text it contains is
 rendered.
@@ -221,12 +210,8 @@ rendered.
     delete the content and enter the following text:
 
 > +++# Train a machine learning model and track with MLflow+++
-
-![A screenshot of a computer Description automatically
-generated](./media/image31.png)
-
-![A screenshot of a computer Description automatically
-generated](./media/image32.png)
+     ![](./media/image31.png)
+     ![](./media/image32.png)
 
 ## Task 5: Load data into a dataframe
 
@@ -241,23 +226,18 @@ and columns.
     on the **Add** button under the **Add lakehouse** to add a
     lakehouse.
 
-> ![](./media/image33.png)
->
-> ![A screenshot of a computer Description automatically
-> generated](./media/image34.png)
+      ![](./media/image33.png)
+
+      ![](./media/image34.png)
 
 2.  In **Add lakehouse** dialog box, select **Existing lakehouse** radio
     button and select **Add**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image35.png)
-
+      ![](./media/image35.png)
 3.  In **Choose the data you want to connect** page, select your
     lakehouse i.e., **TrainModel**\_**Lakehouse**, then click on the
     **Add** button.
-
-![A screenshot of a computer Description automatically
-generated](./media/image36.png)
+      ![](./media/image36.png)
 
 4.  In your notebook, use the **+ Code** icon below the latest cell
     output to add a new code cell to the notebook.
@@ -267,38 +247,28 @@ generated](./media/image36.png)
 > menu bar, on the **Edit** tab, select **+ Add code cell**.
 
 5.  Enter the following code in it:
-
-> +++# Azure storage access info for open dataset diabetes
->
-> blob_account_name = "azureopendatastorage"
->
-> blob_container_name = "mlsamples"
->
-> blob_relative_path = "diabetes"
->
-> blob_sas_token = r"" \# Blank since container is Anonymous access
->
-> \# Set Spark config to access blob storage
->
-> wasbs_path = f"wasbs://%s@%s.blob.core.windows.net/%s" %
-> (blob_container_name, blob_account_name, blob_relative_path)
->
-> spark.conf.set("fs.azure.sas.%s.%s.blob.core.windows.net" %
-> (blob_container_name, blob_account_name), blob_sas_token)
->
-> print("Remote blob path: " + wasbs_path)
->
-> \# Spark read parquet, note that it won't load any data yet by now
->
-> df = spark.read.parquet(wasbs_path)+++
->
-> ![](./media/image37.png)
+```
+# Azure storage access info for open dataset diabetes
+blob_account_name = "azureopendatastorage"
+blob_container_name = "mlsamples"
+blob_relative_path = "diabetes"
+blob_sas_token = r"" # Blank since container is Anonymous access
+    
+# Set Spark config to access  blob storage
+wasbs_path = f"wasbs://%s@%s.blob.core.windows.net/%s" % (blob_container_name, blob_account_name, blob_relative_path)
+spark.conf.set("fs.azure.sas.%s.%s.blob.core.windows.net" % (blob_container_name, blob_account_name), blob_sas_token)
+print("Remote blob path: " + wasbs_path)
+    
+# Spark read parquet, note that it won't load any data yet by now
+df = spark.read.parquet(wasbs_path)
+```
+   ![](./media/image37.png)
 
 6.  Use the **▷ Run cell** button on the left of the cell to run it.
     Alternatively, you can press **SHIFT** + **ENTER** on your keyboard
     to run a cell.
 
-![](./media/image38.png)
+      ![](./media/image38.png)
 
 > **Note**: Since this is the first time you’ve run any Spark code in
 > this session, the Spark pool must be started. This means that the
@@ -309,28 +279,24 @@ generated](./media/image36.png)
     to the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
 
-> codeCopy
->
-> +++display(df)+++
+      +++display(df)+++
 
 8.  When the cell command has completed, review the output below the
     cell, which should look similar to this:
 
-![](./media/image39.png)
+     ![](./media/image39.png)
 
 > The output shows the rows and columns of the diabetes dataset
 
 9.  The data is loaded as a Spark dataframe. Scikit-learn will expect
     the input dataset to be a Pandas dataframe. Run the code below to
     convert your dataset to a Pandas dataframe:
-
-> +++import pandas as pd
->
-> df = df.toPandas()
->
-> df.head()+++
->
-> ![](./media/image40.png)
+    ```
+     import pandas as pd
+     df = df.toPandas()
+     df.head()
+    ```
+      ![](./media/image40.png)
 
 ## Task 6: Train a machine learning model
 
@@ -342,48 +308,41 @@ the Scikit-Learn library and track the model with MLflow.
     Code** icon. Click on the **+ Code** icon and enter the following
     code in the cell. Use the **▷ Run cell** button on the left of the
     cell to run it
-
-+++from sklearn.model_selection import train_test_split
-
-X, y =
-df\[\['AGE','SEX','BMI','BP','S1','S2','S3','S4','S5','S6'\]\].values,
-df\['Y'\].values
-
-X_train, X_test, y_train, y_test = train_test_split(X, y,
-test_size=0.30, random_state=0)+++
-
-![](./media/image41.png)
+    ```
+     from sklearn.model_selection import train_test_split
+    
+     X, y = df[['AGE','SEX','BMI','BP','S1','S2','S3','S4','S5','S6']].values, df['Y'].values
+    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
+    ```
+     ![](./media/image41.png)
 
 2.  Add another new code cell to the notebook, enter the following code
     in it, and run it:
-
-> import mlflow
->
-> experiment_name = "experiment-diabetes"
->
-> mlflow.set_experiment(experiment_name)
-
-![](./media/image42.png)
+```
+import mlflow
+experiment_name = "experiment-diabetes"
+mlflow.set_experiment(experiment_name)
+```
+  ![](./media/image42.png)
 
 The code creates an MLflow experiment named **experiment-diabetes**.
 Your models will be tracked in this experiment.
 
 3.  Add another new code cell to the notebook, enter the following code
     in it, and run it.
-
-> +++from sklearn.linear_model import LinearRegression
->
-> with mlflow.start_run():
->
-> mlflow.autolog()
->
-> model = LinearRegression()
->
-> model.fit(X_train, y_train)
->
-> mlflow.log_param("estimator", "LinearRegression")+++
-
-![](./media/image43.png)
+```
+from sklearn.linear_model import LinearRegression
+    
+with mlflow.start_run():
+   mlflow.autolog()
+    
+   model = LinearRegression()
+   model.fit(X_train, y_train)
+    
+   mlflow.log_param("estimator", "LinearRegression")+++
+```
+   ![](./media/image43.png)
 
 The code trains a regression model using Linear Regression. Parameters,
 metrics, and artifacts, are automatically logged with MLflow.
@@ -392,20 +351,18 @@ value *LinearRegression*.
 
 4.  Add another new code cell to the notebook, enter the following code
     in it, and run it.
-
-> +++from sklearn.tree import DecisionTreeRegressor
->
-> with mlflow.start_run():
->
-> mlflow.autolog()
->
-> model = DecisionTreeRegressor(max_depth=5)
->
-> model.fit(X_train, y_train)
->
-> mlflow.log_param("estimator", "DecisionTreeRegressor")+++
-
-![](./media/image44.png)
+```
+from sklearn.tree import DecisionTreeRegressor
+    
+with mlflow.start_run():
+   mlflow.autolog()
+    
+   model = DecisionTreeRegressor(max_depth=5) 
+   model.fit(X_train, y_train)
+    
+   mlflow.log_param("estimator", "DecisionTreeRegressor")+++
+```
+  ![](./media/image44.png)
 
 The code trains a regression model using Decision Tree Regressor.
 Parameters, metrics, and artifacts, are automatically logged with
@@ -421,29 +378,24 @@ MLflow library to retrieve your experiments and its details.
     Code** icon below the cell output to add a new code cell to the
     notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
-
-+++import mlflow
-
+```
+import mlflow
 experiments = mlflow.search_experiments()
-
 for exp in experiments:
-
-print(exp.name)+++
-
-![](./media/image45.png)
+    print(exp.name)
+```
+   ![](./media/image45.png)
 
 2.  To retrieve a specific experiment, you can get it by its name. Use
     the **+ Code** icon below the cell output to add a new code cell to
     the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
-
-+++experiment_name = "experiment-diabetes"
-
-exp = mlflow.get_experiment_by_name(experiment_name)
-
-print(exp)+++
-
-![](./media/image46.png)
+    ```
+    experiment_name = "experiment-diabetes"
+    exp = mlflow.get_experiment_by_name(experiment_name)
+    print(exp)
+    ```
+     ![](./media/image46.png)
 
 3.  Using an experiment name, you can retrieve all jobs of that
     experiment. Use the **+ Code** icon below the cell output to add a
@@ -451,8 +403,7 @@ print(exp)+++
     Use the **▷ Run cell** button on the left of the cell to run it.
 
 +++ mlflow.search_runs(exp.experiment_id)+++
-
-![](./media/image47.png)
+     ![](./media/image47.png)
 
 4.  To more easily compare job runs and outputs, you can configure the
     search to order the results. For example, the following cell orders
@@ -463,9 +414,8 @@ print(exp)+++
     cell** button on the left of the cell to run it.
 
 +++ mlflow.search_runs(exp.experiment_id, order_by=\["start_time
-DESC"\], max_results=2)+++
-
-![](./media/image48.png)
+    DESC"\], max_results=2)+++
+     ![](./media/image48.png)
 
 6.  Finally, you can plot the evaluation metrics of multiple models next
     to each other to easily compare models:
@@ -473,32 +423,21 @@ DESC"\], max_results=2)+++
 7.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it.
-
-> +++import matplotlib.pyplot as plt
->
-> df_results = mlflow.search_runs(exp.experiment_id,
-> order_by=\["start_time DESC"\],
-> max_results=2)\[\["metrics.training_r2_score", "params.estimator"\]\]
->
-> fig, ax = plt.subplots()
->
-> ax.bar(df_results\["params.estimator"\],
-> df_results\["metrics.training_r2_score"\])
->
-> ax.set_xlabel("Estimator")
->
-> ax.set_ylabel("R2 score")
->
-> ax.set_title("R2 score by Estimator")
->
-> for i, v in enumerate(df_results\["metrics.training_r2_score"\]):
->
-> ax.text(i, v, str(round(v, 2)), ha='center', va='bottom',
-> fontweight='bold')
->
-> plt.show()+++
->
-> ![](./media/image49.png)
+```
+import matplotlib.pyplot as plt
+   
+df_results = mlflow.search_runs(exp.experiment_id, order_by=["start_time DESC"], max_results=2)[["metrics.training_r2_score", "params.estimator"]]
+   
+fig, ax = plt.subplots()
+ax.bar(df_results["params.estimator"], df_results["metrics.training_r2_score"])
+ax.set_xlabel("Estimator")
+ax.set_ylabel("R2 score")
+ax.set_title("R2 score by Estimator")
+for i, v in enumerate(df_results["metrics.training_r2_score"]):
+    ax.text(i, v, str(round(v, 2)), ha='center', va='bottom', fontweight='bold')
+plt.show()
+```
+ ![](./media/image49.png)
 
 ## Task 8: Explore your experiments
 
@@ -507,33 +446,31 @@ to visually explore them.
 
 1.  Select **TrainModel_FabricXX** in the left navigation pane.
 
-![](./media/image50.png)
+    ![](./media/image50.png)
 
 2.  In the **TrainModel_FabricXX** pane ,Select
     the **experiment-diabetes** experiment to open it.
 
-![](./media/image51.png)
+    ![](./media/image51.png)
 
-![](./media/image52.png)
+   ![](./media/image52.png)
 
 3.  In the **experiment-diabetes** pane, Select the **View** tab and
     select **Run list**.
 
-![](./media/image53.png)
+    ![](./media/image53.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image54.png)
+    ![](./media/image54.png)
 
 4.  Select the two latest runs by checking each box.
 
-![](./media/image55.png)
+     ![](./media/image55.png)
 
 5.  As a result, your two last runs will be compared to each other in
     the **Metric comparison** pane. By default, the metrics are plotted
     by run name.
 
-![A screenshot of a computer Description automatically
-generated](./media/image56.png)
+      ![](./media/image56.png)
 
 6.  Select the **🖉** (Edit) button of the graph visualizing the mean
     absolute error for each run.and enter the below details
@@ -544,20 +481,17 @@ generated](./media/image56.png)
 
 - Select **Replace** and explore the new graph.
 
-![](./media/image57.png)
+   ![](./media/image57.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image58.png)
+   ![](./media/image58.png)
 
-![](./media/image59.png)
+   ![](./media/image59.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image60.png)
+   ![](./media/image60.png)
 
-![](./media/image61.png)
+   ![](./media/image61.png)
 
-![A screenshot of a graph Description automatically
-generated](./media/image62.png)
+   ![](./media/image62.png)
 
 By plotting the performance metrics per logged estimator, you can review
 which algorithm resulted in a better model.
@@ -572,28 +506,27 @@ predictions.
 1.  In the experiment overview, ensure the **View** tab is selected and
     select **Run details**
 
-![](./media/image63.png)
+     ![](./media/image63.png)
 
-7.  Select the run with the highest Training R2 score and click on
+2.  Select the run with the highest Training R2 score and click on
     the** Save **in the Save run as model box (you may need to scroll to
     the right to see this).
 
-![](./media/image64.png)
+     ![](./media/image64.png)
 
-8.  Select **Save as ML model** in the newly opened pop-up window,
+3.  Select **Save as ML model** in the newly opened pop-up window,
     select the **model** folder and name the model **model-diabetes**.
     Now click on the **Save**.
 
-![](./media/image65.png)
+     ![](./media/image65.png)
 
 9.  Select **View ML model** in the notification that appears at the top
     right of your screen when the model is created. You can also refresh
     the window. The saved model is linked under **Model versions**.
 
-![](./media/image66.png)
+    ![](./media/image66.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image67.png)
+    ![](./media/image67.png)
 
 Note that the model, the experiment, and the experiment run are linked,
 allowing you to review how the model is trained.
@@ -605,17 +538,17 @@ save the notebook with a meaningful name and end the Spark session.
 
 1.  Select **Notebook 1** in the left navigation pane.
 
-![](./media/image68.png)
+    ![](./media/image68.png)
 
 2.  In the notebook menu bar, use the ⚙️ **Settings** icon to view the
     notebook settings
 
-![](./media/image69.png)
+     ![](./media/image69.png)
 
 3.  Set the **Name** of the notebook to **Train and compare models**,
     and then close the settings pane.
 
-![](./media/image70.png)
+     ![](./media/image70.png)
 
 4.  On the notebook menu, select **Stop session** to end the Spark
     session.
@@ -632,23 +565,20 @@ the workspace you created for this exercise.
 1.  In the bar on the left, select the icon for your workspace i.e
     **TrainModel_FabricXX** to view all of the items it contains.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image71.png)
+    ![](./media/image71.png)
 
 2.  In the menu on the toolbar, select **Workspace settings**.
 
-> ![A screenshot of a search Description automatically
-> generated](./media/image72.png)
+    ![](./media/image72.png))
 
 5.  Select **General** and click on **Remove this workspace.**
 
-> ![](./media/image73.png)
+     ![](./media/image73.png)
 
 6.  In the **Delete workspace?** dialog box, click on the **Delete**
     button.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image74.png)
+     ![](./media/image74.png)
 
 **Summary**
 
