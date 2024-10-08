@@ -37,7 +37,7 @@ with *notebooks*, *experiments*, and *models* in Microsoft Fabric.
 1.  In your VM, navigate and click in the **Search bar**, type
     **Settings** and then click on **Settings** under **Best match**.  
 
-     ![](./media/image1.png)
+      ![](./media/image1.png)
 
 2.  On Settings window, navigate and click on **Time & language**. 
 
@@ -126,7 +126,14 @@ trial enabled.
 4.  In the **Create a workspace tab**, enter the following details and
     click on the **Apply** button.
 
-[TABLE]
+Name	TrainModel_FabricXX (XX can be a unique number) (here, we entered TrainModel_Fabric29)
+Advanced	Under License mode, select Trial
+Default storage format	Small dataset storage format
+|	                      |                                                   |
+|-----------------------|---------------------------------------------------|
+|Name                   |TrainModel_FabricXX (XX can be a unique number) 	  |
+|Advanced               |Under License mode, select Trial                 	|
+|Default storage format |Small dataset storage format   	                  |
 
      ![](./media/image18.png)
      ![](./media/image19.png)
