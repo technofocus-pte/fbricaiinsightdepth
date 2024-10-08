@@ -340,7 +340,7 @@ with mlflow.start_run():
    model = LinearRegression()
    model.fit(X_train, y_train)
     
-   mlflow.log_param("estimator", "LinearRegression")+++
+   mlflow.log_param("estimator", "LinearRegression")
 ```
    ![](./media/image43.png)
 
