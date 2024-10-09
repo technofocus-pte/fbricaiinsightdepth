@@ -1,3 +1,4 @@
+# **Use Case 02- Implementing a Data Science scenario in Microsoft Fabric** 
 **Introduction**
 
 The lifecycle of a Data science project typically includes (often,
@@ -54,58 +55,50 @@ trial enabled.
 
 > **Note**: If you are directed to Microsoft Fabric Home page, then skip
 > steps from \#2 to \#4.
->
-> ![A screenshot of a computer Description automatically
-> generated](./media/image1.png)
+      ![](./media/image1.png)
 
 2.  In the **Microsoft Fabric** window, enter your credentials, and
     click on the **Submit** button.
 
-> ![A close up of a white and green object Description automatically
-> generated](./media/image2.png)
+      ![](./media/image2.png)
 
 3.  Then, In the **Microsoft** window enter the password and click on
     the **Sign in** button**.**
 
-> ![A login screen with a red box and blue text Description
-> automatically generated](./media/image3.png)
+     ![](./media/image3.png)
 
 4.  In **Stay signed in?** window, click on the **Yes** button.
 
-> ![A screenshot of a computer error Description automatically
-> generated](./media/image4.png)
+     ![](./media/image4.png)
 
 5.  In the **Microsoft Fabric** home page, select the **Power BI**
     template.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image5.png)
+     ![](./media/image5.png)
 
 6.  In the **Power BI Home** page menu bar on the left,
     select **Workspaces** (the icon looks similar to 🗇).
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image6.png)
+     ![](./media/image6.png)
 
 7.  In the Workspaces pane, select **+** **New workspace**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image7.png)
+      ![](./media/image7.png)
 
 8.  In the **Create a workspace tab**, enter the following details and
     click on the **Apply** button.
+    |                       |                                           |
+    |-----------------------|-------------------------------------------|
+    |Name                   |Data-ScienceXX(XX can be a unique number) 	|
+    |Advanced               |Under License mode, select Trial	        |
+    |Default storage format |Small dataset storage format	            |
+     ![](./media/image8.png)
 
-[TABLE]
+     ![](./media/image9.png)
 
-> ![](./media/image8.png)
-
-![A screenshot of a computer Description automatically
-generated](./media/image9.png)
-
-![](./media/image10.png)
-
-![A screenshot of a computer Description automatically
-generated](./media/image11.png)
+    ![](./media/image10.png)
+ 
+    ![](./media/image11.png)
 
 9.  Wait for the deployment to complete. It takes 2-3 minutes to
     complete. When your new workspace opens, it should be empty.
@@ -122,69 +115,65 @@ the data files you’re going to analyze.
 2.  In the **Synapse Data Engineering** home page, Select
     **Lakehouse(Preview)** under **New** pane.
 
-![A screenshot of a computer Description automatically
-generated](./media/image12.png)
+      ![](./media/image12.png)
 
 3.  In the **New lakehouse** dialog box, enter
     **FabricData_Sciencelakehouse** in the **Name** field, click on the
     **Create** button and open the new lakehouse.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image13.png)
+      ![](./media/image13.png)
 
-![](./media/image14.png)
+      ![](./media/image14.png)
 
 4.  After a minute or so, a new empty lakehouse will be created. You
     need to ingest some data into the data lakehouse for analysis.
 
-![](./media/image15.png)
+      ![](./media/image15.png)
 
 5.  You will see a notification stating **Successfully created SQL
     endpoint**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image16.png)
+     ![](./media/image16.png)
 
 10. At the bottom left of the Power BI portal, select the **Data
     Engineering** icon and switch to the **Data Science** experience.
 
-![](./media/image17.png)
+     ![](./media/image17.png)
 
 ## **Task 3: Import tutorial notebooks**
 
 1.  On the Data science experience homepage, select **Import
     notebook** and upload the notebook files.
 
-![](./media/image18.png)
+     ![](./media/image18.png)
 
 2.  On the **Import status** pane that appears on the right side, click
     on **Upload** button and then browse to
     **C:\Labfiles\data-science\data-science-tutorial** and then select
-    all ***files*** and click on the **Open** button.
+    all **files** and click on the **Open** button.
 
-![](./media/image19.png)
+     ![](./media/image19.png)
 
-![](./media/image20.png)
+     ![](./media/image20.png)
 
 3.  Once the notebooks are imported, select **Go to workspace** in the
     import dialog box
 
-![](./media/image21.png)
+      ![](./media/image21.png)
 
 4.  The imported notebooks are now available in your workspace for use.
 
-![A screenshot of a computer Description automatically
-generated](./media/image22.png)
+     ![](./media/image22.png)
 
 5.  On the Data-ScienceXX workspace homepage, select the
     **1-ingest-data** notebook.
 
-![](./media/image23.png)
+     ![](./media/image23.png)
 
 6.  If the imported notebook includes output, select the **Edit** menu,
     then select **Clear all outputs**.
 
-![](./media/image24.png)
+     ![](./media/image24.png)
 
 ## **Task 4: Attach a lakehouse to the notebooks**
 
@@ -196,23 +185,23 @@ workspace.
 1.  Select **Add lakehouse** in the left pane and select **Existing
     lakehouse** to open the **Data hub** dialog box.
 
-> ![](./media/image25.png)
+     ![](./media/image25.png)
 
 2.  In the **Add lakehouse** box, select the **Existing
     lakehouse** radio button and click on the **Add** button.
 
-> ![](./media/image26.png)
+      ![](./media/image26.png)
 
 3.  In **OneLake data hub** tab, Select the
     **FabricData_Sciencelakehouse** and select **Add**.
 
-> ![](./media/image27.png)
+      ![](./media/image27.png)
 
 4.  Once a lakehouse is added, it's visible in the lakehouse pane in the
     notebook UI where tables and files stored in the lakehouse can be
     viewed.
 
-> ![](./media/image28.png)
+     ![](./media/image28.png)
 
 ## **Task 5: Ingest data into a Microsoft Fabric lakehouse using Apache Spark**
 
@@ -255,50 +244,46 @@ contribute to the exited status.
 1.  If the imported notebook includes output, select the **Edit** menu,
     then select **Clear all outputs**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image24.png)
+     ![](./media/image28.png)
 
 2.  Download dataset and upload to lakehouse, select the code cell and
     click on the **play** button to execute cell.
 
-![](./media/image29.png)
+     ![](./media/image29.png)
 
 3.  This code downloads a publicly available version of the dataset and
     then stores it in a Fabric lakehouse. Select the code cell and click
     on the **play** button to execute cell.
 
-![](./media/image30.png)
+     ![](./media/image30.png)
 
 ## **Task 6: Explore and visualize data using Microsoft Fabric notebooks**
 
 1.  Now, click on **Data_ScienceXX** on the left-sided navigation pane.
 
-![](./media/image31.png)
+     ![](./media/image31.png)
 
 2.  On the Data-ScienceXX workspace homepage, select the
     **FabricData_Sciencelakehouse** lakehouse.
 
-![](./media/image32.png)
+     ![](./media/image32.png)
 
 3.  In the Fabric**Data_Sciencelakehouse** page, select **Open
     notebook** \> **Existing notebook** from the top navigation menu.
 
-![](./media/image33.png)
+      ![](./media/image33.png)
 
 4.  From the list of **Open existing notebook**, select
     the **2-explore-cleanse-data** notebook and select **Open**.
 
-![](./media/image34.png)
+      ![](./media/image34.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image35.png)
+      ![](./media/image35.png)
 
 4.  If the imported notebook includes output, select the **Edit** menu,
     then select **Clear all outputs**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image24.png)
-
+      ![](./media/image24.png)
 5.  Read raw data from the **Files** section of the lakehouse. You
     uploaded this data in the previous notebook. Make sure you have
     attached the same lakehouse you used in Task 5 to this notebook
@@ -307,13 +292,13 @@ generated](./media/image24.png)
 6.  Select the code cell and click on the **play** button to execute
     cell.
 
-![](./media/image36.png)
+     ![](./media/image36.png)
 
 7.  Convert the spark DataFrame to pandas DataFrame for easier
     processing and visualization. Select the code cell and click on the
     **play** button to execute cell.
 
-![](./media/image37.png)
+      ![](./media/image37.png)
 
 8.  Explore the raw data with display, do some basic statistics and show
     chart views. You first need to import required libraries for data
@@ -322,16 +307,15 @@ generated](./media/image24.png)
     DataFrames and arrays. Select the code cell and click on the
     **play** button to execute cell.
 
-![](./media/image38.png)
+      ![](./media/image38.png)
 
-![](./media/image39.png)
+      ![](./media/image39.png)
 
 9.  Use Data Wrangler to perform initial data cleansing, under the
     notebook ribbon select **Data** tab , dropdown the **Launch Data
     Wrangler** and select the **df** data wrangler.
 
-![A screenshot of a computer Description automatically
-generated](./media/image40.png)
+     ![](./media/image40.png)
 
 10. Once the Data Wrangler is launched, a descriptive overview of the
     displayed data panel is generated.
@@ -339,68 +323,59 @@ generated](./media/image40.png)
 11. In df(Data Wrangler) pane, under **Operations** select the **Find
     and replace\>Drop duplicate rows.**
 
-![A screenshot of a computer Description automatically
-generated](./media/image41.png)
+     ![](./media/image41.png)
 
 12. Under the Target columns, select the **RowNumber and CustomerId**
     check boxs**,** and then click on the **Apply** button.
 
-![A screenshot of a computer Description automatically
-generated](./media/image42.png)
+      ![](./media/image42.png)
 
 13. In df(Data Wrangler) pane, under **Operations** select the **Find
     and replace\>Drop missing values.**
 
-![](./media/image43.png)
+      ![](./media/image43.png)
 
 14. Under the Target columns, select the **RowNumber, CustomerId,
     Surname** check boxs**,** and then click on the **Apply** button.
 
-![A screenshot of a computer Description automatically
-generated](./media/image44.png)
+      ![](./media/image44.png)
 
 15. In df(Data Wrangler) pane, under **Operations** select the **Find
     and replace\>Drop missing values.**
 
-![A screenshot of a computer Description automatically
-generated](./media/image45.png)
+      ![](./media/image45.png)
 
 16. Under the Target columns, select the **Select all** check box**,**
-    and then click on the **Apply** button.![A screenshot of a computer
-    Description automatically generated](./media/image46.png)
+    and then click on the **Apply** button.
+      ![](./media/image46.png)
 
 17. In df(Data Wrangler) pane, select the **+Add code to notebook.**
 
-![A screenshot of a computer Description automatically
-generated](./media/image47.png)
-
+      ![](./media/image47.png)
 18. This code is similar to the code produced by Data Wrangler, but adds
     in the argument **inplace=True** to each of the generated steps. By
     setting **inplace=True**, pandas will overwrite the original
     DataFrame instead of producing a new DataFrame as an output.
 
-![](./media/image48.png)
+     ![](./media/image48.png)
 
 19. Select new added code cell and click on the **play** button to
     execute cells.
 
-![](./media/image49.png)
+      ![](./media/image49.png)
 
 20. To determine categorical, numerical, and target attributes. Select
     the code cell and click on the **play** button to execute cell.
 
-![](./media/image50.png)
+      ![](./media/image50.png)
 
 21. To show the five-number summary (the minimum score, first quartile,
     median, third quartile, the maximum score) for the numerical
     attributes, using box plots. Select the code cell and click on the
     **play** button to execute cell.
 
-![A screenshot of a computer Description automatically
-generated](./media/image51.png)
-
-![A screenshot of a computer screen Description automatically
-generated](./media/image52.png)
+      ![](./media/image51.png)
+      ![](./media/image52.png)
 
 22. To show the distribution of exited versus non-exited customers
     across the categorical attributes. Select the code cell and click on
