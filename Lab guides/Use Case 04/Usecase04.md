@@ -27,29 +27,23 @@ capacity in the Azure portal.
 1.  In your VM, navigate and click in the **Search bar**, type
     **Settings** and then click on **Settings** under **Best match**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image1.png)
+      ![](./media/image1.png)
 
 2.  On Settings window, navigate and click on **Time & language**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image2.png)
+      ![](./media/image2.png)
 
 3.  On **Time & language** page, navigate and click on **Date & time**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image3.png)
-
+      ![](./media/image3.png)
 4.  Scroll down and navigate to **Additional settings** section, then
     click on **Syn now** button. It will take 3-5 minutes to syn.
 
-![A screenshot of a computer Description automatically
-generated](./media/image4.png)
+      ![](./media/image4.png)
 
 5.  Close the **Settings** window.
 
-![A screenshot of a computer Description automatically
-generated](./media/image5.png)
+     ![](./media/image5.png)
 
 ## Task 0: Redeem Azure Pass
 
@@ -58,8 +52,7 @@ generated](./media/image5.png)
 
 2.  Then, click on the **Start button.**
 
-![A person using a computer Description automatically
-generated](./media/image6.png)
+     ![](./media/image6.png)
 
 **Note**: Do not use your Company/Work Account to login to redeem the
 Azure Pass, another Azure Pass will not be issued.
@@ -67,8 +60,7 @@ Azure Pass, another Azure Pass will not be issued.
 3.  Click on the **Resources** tab of the Lab VM and enter the **Office
     365 tenant credentials** to **Sign In**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image7.png)
+     ![](./media/image7.png)
 
 ![Graphical user interface, application Description automatically
 generated](./media/image8.png)
