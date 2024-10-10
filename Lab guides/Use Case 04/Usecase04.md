@@ -62,101 +62,84 @@ Azure Pass, another Azure Pass will not be issued.
 
      ![](./media/image7.png)
 
-![Graphical user interface, application Description automatically
-generated](./media/image8.png)
+    ![](./media/image8.png)
 
 4.  Crosscheck the Email ID and then click on the **Confirm Microsoft
     Account**.
 
-![Text Description automatically generated](./media/image9.png)
+     ![](./media/image9.png)
 
 5.  Click on the **Resources** tab and copy the **Promo Code**. Navigate
     to **Enter Promo code** box and paste the Promo Code that have you
     copied, then click on the **Claim Promo Code button.**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image10.png)
+     ![](./media/image10.png)
 
-![Graphical user interface, text, application Description automatically
-generated](./media/image11.png)
+     ![](./media/image11.png)
 
 6.  Enter correct details in **Your Profile** page, tick all the check
     boxes, and then click on **Sign up** button.
 
-![A screenshot of a computer Description automatically generated with
-medium confidence](./media/image12.jpeg)
+     ![](./media/image12.png)
 
-![Graphical user interface, text, application Description automatically
-generated](./media/image13.png)
+     ![](./media/image13.png)
 
 7.  On **Are you satisfied with your signup experience** window, enter
     your feedback and click on the **Submit** button.
 
-![](./media/image14.png)
+     ![](./media/image14.png)
 
 8.  It would automatically redirect you to the Azure Portal and now you
     are ready to use Azure services. On **Welcome to Microsoft Azure**
     dialog box, click on the **Maybe later** button.
 
-![A screenshot of a computer Description automatically
-generated](./media/image15.png)
+      ![](./media/image15.png)
 
 ## Task 1: Sign in to Power BI account and sign up for the free [Microsoft Fabric trial](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial)
 
 1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL: !!https://app.fabric.microsoft.com/!! then press
+    the following URL: +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button.
 
-> ![A search engine window with a red box Description automatically
-> generated with medium confidence](./media/image16.png)
+      ![](./media/image16.png)
 
 2.  In the **Microsoft Fabric** window, enter your given credentials,
     and click on the **Submit** button.
 
-> ![A close up of a white and green object Description automatically
-> generated](./media/image17.png)
+      ![](./media/image17.png)
 
 3.  Then, In the **Microsoft** window enter the password and click on
-    the **Sign in** button**.**
+    the **Sign in** button.
 
-> ![A login screen with a red box and blue text Description
-> automatically generated](./media/image18.png)
+     ![](./media/image18.png)
 
 4.  In **Stay signed in?** window, click on the **Yes** button.
 
-> ![A screenshot of a computer error Description automatically
-> generated](./media/image19.png)
-
+     ![](./media/image19.png)
 5.  You’ll be directed to Power BI Home page.
 
-![A screenshot of a computer Description automatically
-generated](./media/image20.png)
+      ![](./media/image20.png)
 
 6.  On **Power BI Home** page, click on the **Account manager** on the
     right side. In the Account manager blade, navigate and
     select **Start trial as shown in the below image.**
 
-![A screenshot of a computer Description automatically
-generated](./media/image21.png)
+      ![](./media/image21.png)
 
 7.  If prompted, agree to the terms and then select **Start trial**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image22.png)
+      ![](./media/image22.png)
 
 8.  Once your trial capacity is ready, you receive a confirmation
     message. Select **Fabric Home Page** to begin working in Fabric.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image23.png)
-
+     ![](./media/image23.png)
 9.  Open your Account manager again. Notice that you now have a heading
     for **Trial status**. Your Account manager keeps track of the number
     of days remaining in your trial. You will also see the countdown in
     your Fabric menu bar when you work in a product experience.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image24.png)
+      ![](./media/image24.png)
 
 ## Task 2: Create Fabric Capacity using Azure portal 
 
@@ -176,61 +159,56 @@ To create a Fabric capacity outside of a trial environment, create a new
 resource from the Azure portal, and search for Fabric.
 
 1.  Open your browser, navigate to the address bar, type or paste the
-    following URL: !!https://portal.azure.com/!!, then press the
+    following URL: +++https://portal.azure.com/+++, then press the
     **Enter** button.
 
 2.  From the Azure portal home page, click on **Azure portal menu**
     represented by three horizontal bars on the left side of the
     Microsoft Azure command bar as shown in the below image.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image25.png)
+      ![](./media/image25.png)
 
 3.  Navigate and click on **+ Create a resource**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image26.png)
+      ![](./media/image26.png)
 
 4.  On **Create a resource** page, in the **Search services and
     marketplace** search bar, type!!**Fabric!!**, then select
     **Microsoft fabric**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image27.png)
+      ![](./media/image27.png)
 
 5.  In the **Marketplace** page, navigate to the **Microsoft Fabric**
     section, click on the **Create** button dropdown, then select
     **Microsoft Fabric** as shown in the image.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image28.png)
-
+      ![](./media/image28.png)
 6.  In the **Create Fabric capacity** window, under the **Basics** tab,
     enter the following details and click on the **Review+create**
     button.
 
-[TABLE]
-
-> ![](./media/image29.png)
->
-> ![](./media/image30.png)
+|	             |                                                                                               |
+|---------------|-----------------------------------------------------------------------------------------------|
+|Subscription   |Select the assigned subscription	                                                             |
+|Resource group |Resource group	Click on Create new> enter +++AI-Skill-FabricXXX+++(XXX can be a unique number)|
+|Capacity name  |+++aiskillfabric789+++( XXX can be a unique number) 	                                        |
+|Region         |Select near by available region, in this lab West US 3 is using for this resource              |
+|Size           |select F64 SKU                                                                                 |
+    ![](./media/image29.png)
+    ![](./media/image30.png)
 
 7.  Once the Validation is succeeded, click on the **Create** button.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image31.png)
->
-> ![A screenshot of a computer Description automatically
-> generated](./media/image32.png)
+     ![](./media/image31.png)
+
+      ![](./media/image32.png)
 
 8.  After the deployment is completed, click on the **Go to resource**
     button.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image33.png)
+     ![](./media/image33.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image34.png)
+     ![](./media/image34.png)
 
 ## **Task 3: Create a Fabric workspace**
 
@@ -240,59 +218,56 @@ dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and
 reports.
 
 1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL: !!https://app.fabric.microsoft.com/!! then press
+    the following URL: +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button.
 
-> ![A search engine window with a red box Description automatically
-> generated with medium confidence](./media/image16.png)
+     ![](./media/image16.png)
 
 2.  In the **Microsoft Fabric** window, enter your credentials, and
     click on the **Submit** button.
 
-> ![A close up of a white and green object Description automatically
-> generated](./media/image17.png)
+      ![](./media/image17.png)
 
 3.  Then, In the **Microsoft** window enter the password and click on
-    the **Sign in** button**.**
+    the **Sign in** button.
 
-> ![A login screen with a red box and blue text Description
-> automatically generated](./media/image18.png)
+      ![](./media/image18.png)
 
 4.  In **Stay signed in?** window, click on the **Yes** button.
 
-> ![A screenshot of a computer error Description automatically
-> generated](./media/image19.png)
+      ![](./media/image19.png)
 
 5.  You’ll be directed to Power BI Home page.
 
-![A screenshot of a computer Description automatically
-generated](./media/image35.png)
+       ![](./media/image35.png)
 
 6.  Go back to **Power BI** window. On the left side navigation menu of
     Power BI Home page, navigate and click on **Workspaces**.
 
-![](./media/image36.png)
+     ![](./media/image36.png)
 
 7.  In the Workspaces pane, click on **+** **New workspace button.**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image37.png)
+     ![](./media/image37.png)
 
 8.  In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
-[TABLE]
-
-> ![A screenshot of a computer Description automatically
-> generated](./media/image38.png)
->
-> ![](./media/image39.png)
+|	       |      |
+|-------|-------|
+|Name                   |+++Data-FactoryXX+++ (XX can be a unique number) |
+|Advanced               |Under License mode, select Fabric 	|
+|Default storage format |Small dataset storage format	|
+|Capacity               |aiskillfabricXXX             |
+|Template apps          |Check the Develop template apps| 
+    ![](./media/image38.png)
+    ![](./media/image39.png)
 
 9.  Wait for the deployment to complete. It takes 2-3 minutes to
     complete.
 
-![A screenshot of a computer Description automatically
-generated](./media/image40.png)
+     ![](./media/image40.png)
+
 
 ## Task 4: Copilot tenant settings
 
@@ -301,7 +276,7 @@ generated](./media/image40.png)
 2.  In **Settings** pane, scroll down to **Governance and insights**,
     then click on **Admin portal** .
 
-![](./media/image41.png)
+     ![](./media/image41.png)
 
 3.  In **Admin portal** pane, select **Tenant settings**, scroll down to
     **Copilot and Azure OpenAI Service** section, click on **Users can
@@ -310,10 +285,10 @@ generated](./media/image40.png)
     and other features powered by Azure OpenAI** were Enabled, click on
     the **Apply** button.
 
-![](./media/image42.png)
+     ![](./media/image42.png)
 
-![A white background with black text Description automatically
-generated](./media/image43.png)
+     ![](./media/image43.png)
+
 
 4.  In **Admin portal** pane, select **Tenant settings**, scroll down to
     **Copilot and Azure OpenAI Service** section, click on **Data sent
@@ -324,10 +299,10 @@ generated](./media/image43.png)
     compliance boundary, or national cloud instance** were Enabled,
     click on the **Apply** button.
 
-![](./media/image44.png)
+      ![](./media/image44.png)
 
-![A white background with black text Description automatically
-generated](./media/image43.png)
+      ![](./media/image43.png)
+
 
 ## **Task 5: Create a lakehouse**
 
@@ -335,35 +310,32 @@ generated](./media/image43.png)
     located at the bottom left and select **Data Engineering** under
     Synapse.
 
-> ![](./media/image45.png)
+     ![](./media/image45.png)
 
 2.  In the **Synapse** **Data Engineering** **Home** page,
     select **Lakehouse** to create a lakehouse.
 
-![](./media/image46.png)
+      ![](./media/image46.png)
 
 3.  In the **New lakehouse** dialog box, enter
     !!**AI_Fabric_lakehouseXX**!! in the **Name** field, click on the
     **Create** button and open the new lakehouse.
 
 > **Note**: Ensure to remove space before **AI_Fabric_lakehouseXX**.
->
-> ![](./media/image47.png)
+       ![](./media/image47.png)
 
 4.  You will see a notification stating **Successfully created SQL
     endpoint**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image48.png)
+      ![](./media/image48.png)
+      ![](./media/image49.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image49.png)
 
 5.  Next, create a new notebook to query the table. In
     the **Home** ribbon, select the drop down for **Open notebook** and
     choose **New notebook**.
 
-![](./media/image50.png)
+     ![](./media/image50.png)
 
 ## Task 6: Upload AdventureWorksDW data into lakehouse
 
@@ -376,37 +348,27 @@ notebook. Use the notebook to populate the lakehouse with the data.
 1.  In the query editor, copy and paste the following code. Select
     the **Run all** button to execute the query. After the query is
     completed, you will see the results.
-
-!!import pandas as pd
-
+```
+import pandas as pd
 from tqdm.auto import tqdm
+base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
 
-base =
-"https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
+# load list of tables
+df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
 
-\# load list of tables
+for table in (pbar := tqdm(df_tables['table'].values)):
+    pbar.set_description(f"Uploading {table} to lakehouse")
 
-df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=\["table"\])
+    # download
+    df = pd.read_parquet(f"{base}/{table}.parquet")
 
-for table in (pbar := tqdm(df_tables\['table'\].values)):
+    # save as lakehouse table
+    spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
+```
+   ![](./media/image51.png)
 
-pbar.set_description(f"Uploading {table} to lakehouse")
-
-\# download
-
-df = pd.read_parquet(f"{base}/{table}.parquet")
-
-\# save as lakehouse table
-
-spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)!!
-
-![](./media/image51.png)
-
-![A screenshot of a computer Description automatically
-generated](./media/image52.png)
-
-![A screenshot of a computer Description automatically
-generated](./media/image53.png)
+   ![](./media/image52.png)
+    ![](./media/image53.png)
 
 After a few minutes, the lakehouse is populated with the necessary data.
 
@@ -415,28 +377,26 @@ After a few minutes, the lakehouse is populated with the necessary data.
 1.  To create a new AI skill, go to the **Data Science** experience and
     select **AI Skill**.
 
-![](./media/image54.png)
+     ![](./media/image54.png)
 
-1.  In the Data Science home page, select **AI Skill(Preview).**
+2.  In the Data Science home page, select **AI Skill(Preview).**
 
-![](./media/image55.png)
+     ![](./media/image55.png)
 
-2.  In the **Create AI skill** dialog box, enter !!**AISkillsFabric**!!
+3.  In the **Create AI skill** dialog box, enter !!**AISkillsFabric**!!
     in the **Name** field, click on the **Create** button.
 
-![](./media/image56.png)
+     ![](./media/image56.png)
 
-3.  In **Select a lakehouse SQL endpoint for the model to reference.
+4.  In **Select a lakehouse SQL endpoint for the model to reference.
     You’ll select specific tables in the next step** page, select your
     lakehouse i.e., **AI_Fbric_lakehouseXX**, then click on the
     **Confirm** button.
 
-![](./media/image57.png)
+     ![](./media/image57.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image58.png)
-
-4.  You must then select the tables for which you want the AI skill to
+      ![](./media/image58.png)
+5.  You must then select the tables for which you want the AI skill to
     have available access.
 
 This lab uses these tables:
@@ -462,19 +422,19 @@ This lab uses these tables:
 - FactResellerSales
 
 **Important Note:** If you face any SKU issues, please check the
-workspace License info.![](./media/image59.png)
+workspace License info.
+   ![](./media/image59.png)
 
 ## Task 8: Provide instructions
 
 1.  When you first ask the AI skill questions with the listed tables
     select **factinternetsales**, the AI skill answers them fairly well.
 
-2.  For instance, for the question !!**What is the most sold
-    product?!!**, the AI skill returns:
+2.  For instance, for the question **+++What is the most sold
+    product?+++**, the AI skill returns:
+     ![](./media/image60.png)
 
-![](./media/image60.png)
-
-![](./media/image61.png)
+     ![](./media/image61.png)
 
 3.  Copy the all question and SQL queries and paste them in a notepad
     and then Save the notepad to use the information in the upcoming
@@ -483,9 +443,8 @@ workspace License info.![](./media/image59.png)
 4.  Select FactResellerSales and enter the following text and click on
     the **Submit icon** as shown in the below image.
 
-!!**What is our most sold product?**!!
-
-![](./media/image62.png)
++++What is our most sold product?+++
+      ![](./media/image62.png)
 
 As you continue to experiment with queries, you should add more
 instructions.
@@ -493,31 +452,23 @@ instructions.
 5.  Select the **dimcustomer** , enter the following text and click on
     the **Submit icon**
 
-!!**how many active customers did we have June 1st, 2013?**!!
-
-![](./media/image63.png)
-
-![](./media/image64.png)
+**+++how many active customers did we have June 1st, 2013?+++**
+    ![](./media/image63.png)
+     ![](./media/image64.png)
 
 6.  Select the **dimdate,** **FactInternetSales** , enter the following
     text and click on the **Submit icon**
 
-!!**what are the monthly sales trends for the last year?**!!
-
-![A screenshot of a computer Description automatically
-generated](./media/image65.png)
-
-![A screenshot of a computer Description automatically
-generated](./media/image66.png)
+**+++what are the monthly sales trends for the last year?+++**
+     ![](./media/image65.png)
+     ![](./media/image66.png)
 
 7.  Select the **dimproduct,** **FactInternetSales** , enter the
     following text and click on the **Submit icon**
 
-!!**which product category had the highest average sales price?**!!
-
-![](./media/image67.png)
-
-![](./media/image68.png)
+**+++which product category had the highest average sales price?+++**
+     ![](./media/image67.png)
+     ![](./media/image68.png)
 
 Part of the problem is that "active customer" doesn't have a formal
 definition. More instructions in the notes to the model text box might
@@ -527,11 +478,11 @@ sure that the AI handles the question correctly
 8.  The relevant query is moderately complex, so provide an example by
     selecting the edit button.
 
-![](./media/image69.png)
+     ![](./media/image69.png)
 
 9.  In the Example SQL queries tab, select the **+Add example.**
 
-![](./media/image70.png)
+     ![](./media/image70.png)
 
 10. You can manually add examples, but you can also upload them from a
     JSON file. Providing examples from a file is helpful when you have
@@ -541,7 +492,7 @@ sure that the AI handles the question correctly
 11.  Add all the queries and SQL queries that you have saved in Notepad,
     and then click on ‘Download all as .json’.
 
-![](./media/image71.png)
+     ![](./media/image71.png)
 
 ## Task 9: Use the AI skill programmatically
 
@@ -556,27 +507,26 @@ determine whether or not the AI skill has a published URL value.
 1.  In the AISkillFabric page, in the **Home** ribbon select the
     **Settings**.
 
-![](./media/image72.png)
+     ![](./media/image72.png)
 
 2.  Before you publish the AI skill, it doesn't have a published URL
     value, as shown in this screenshot.
 
 3.  Close the AI Skill setting.
 
-![](./media/image73.png)
+     ![](./media/image73.png)
 
 4.  In the **Home** ribbon, select the **Publish**.
 
-![](./media/image74.png)
+     ![](./media/image74.png)
 
-![](./media/image75.png)
+     ![](./media/image75.png)
 
-![A white rectangular sign with green and black text Description
-automatically generated](./media/image76.png)
+      ![](./media/image76.png)
 
 5.  After publishing, select ‘Settings’ from the Home ribbon
 
-![](./media/image77.png)
+      ![](./media/image77.png)
 
 6.  The published URL for the AI skill appears, as shown in this
     screenshot.
@@ -584,40 +534,33 @@ automatically generated](./media/image76.png)
 7.  Copy the URL and paste that in a notepad and then Save the notepad
     to use the information in the upcoming
 
-![](./media/image78.png)
+     ![](./media/image78.png)
 
 8.  Select **Notebook1** in the left navigation pane.
 
-![](./media/image79.png)
+     ![](./media/image79.png)
 
 9.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, enter the following code in it and replace the
     **URL**. Click on **▷ Run** button and review the output
-
-!!import requests
-
+```
+import requests
 import json
-
 import pprint
-
 from synapse.ml.mlflow import get_mlflow_env_config
 
-\# the URL could change if the workspace is assigned to a different
-capacity
 
-url = "https://\<generic published URL value\>"
+# the URL could change if the workspace is assigned to a different capacity
+url = "https://<generic published URL value>"
 
 configs = get_mlflow_env_config()
 
 headers = {
-
-"Authorization": f"Bearer {configs.driver_aad_token}",
-
-"Content-Type": "application/json; charset=utf-8"
-
+    "Authorization": f"Bearer {configs.driver_aad_token}",
+    "Content-Type": "application/json; charset=utf-8"
 }
 
-question = "{userQuestion: \\what is an example product?\\}"
+question = "{userQuestion: \"what is an example product?\"}"
 
 response = requests.post(url, headers=headers, data = question)
 
@@ -627,8 +570,8 @@ print("")
 
 response = json.loads(response.content)
 
-print(response\["result"\])!!
-
+print(response["result"])
+```
 ![](./media/image80.png)
 
 ![](./media/image81.png)
@@ -643,17 +586,16 @@ portal](https://portal.azure.com/?azure-portal=true).
 1.  To delete the storage account, navigate to **Azure portal Home**
     page, click on **Resource groups**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image82.png)
+     ![](./media/image82.png))
 
 2.  Click on the assigned resource group.
 
-![](./media/image83.png)
+     ![](./media/image83.png)
 
 3.  In the **Resource group** home page, select the **delete resource
     group**
 
-> ![](./media/image84.png)
+      ![](./media/image84.png)
 
 4.  In the **Delete Resources** pane that appears on the right side,
     navigate to **Enter “resource group name” to confirm deletion**
@@ -661,38 +603,33 @@ portal](https://portal.azure.com/?azure-portal=true).
 
 5.  On **Delete confirmation** dialog box, click on **Delete** button.
 
-> ![A screenshot of a computer error Description automatically
-> generated](./media/image85.png)
+      ![](./media/image85.png)
 
 6.  Click on the bell icon, you’ll see the notification –**Deleted
     resource group AI-Skill-Fabric890**
 
-![A screenshot of a web page Description automatically
-generated](./media/image86.png)
+      ![](./media/image86.png)
 
 7.  Open your browser, navigate to the address bar, and type or paste
-    the following URL: !!https://app.fabric.microsoft.com/!! then press
+    the following URL: +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button.
 
-> ![](./media/image87.png)
+      ![](./media/image87.png)
 
 8.  Select the ***...*** option under the workspace name and
     select **Workspace settings**.
 
-![](./media/image88.png)
+     ![](./media/image88.png)
 
 9.  Select **General** and click on **Remove this workspace.**
 
-![A screenshot of a computer settings Description automatically
-generated](./media/image89.png)
+     ![](./media/image89.png)
 
 10. Click on **Delete** in the warning that pops up.
 
-![A white background with black text Description automatically
-generated](./media/image90.png)
+     ![](./media/image90.png)
 
 11. Wait for a notification that the Workspace has been deleted, before
     proceeding to the next lab.
 
-![A screenshot of a computer Description automatically
-generated](./media/image91.png)
+     ![](./media/image91.png)
