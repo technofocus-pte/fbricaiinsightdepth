@@ -1,3 +1,4 @@
+# **Lab 05-Performing Sentiment analysis and Text translation with AI Skills in Microsoft Fabric**
 **Introduction**
 
 Azure AI services help developers and organizations rapidly create
@@ -17,8 +18,6 @@ five main pillars: Vision, Speech, Language, Web search, and Decision.
 
 - Create a multi-service resource for Azure AI services using the Azure
   portal.
-
-&nbsp;
 
 - Create a workspace and lakehouse in Microsoft Fabric with the Fabric
   trial enabled.
