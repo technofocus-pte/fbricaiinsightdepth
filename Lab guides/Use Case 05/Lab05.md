@@ -142,31 +142,31 @@ To create a multi-service resource follow these instructions:
     accept the conditions (as applicable), and then select **Review +
     create**.
 
-![](./media/image15.png)
+     ![](./media/image15.png)
 
-![](./media/image16.png)
+     ![](./media/image16.png)
 
 4.  In the **Review+submit** tab, once the Validation is Passed, click
     on the **Create** button.
 
-![](./media/image17.png)
+      ![](./media/image17.png)
 
 5.  After the deployment is completed, click on the **Go to resource**
     button.
 
-![](./media/image18.png)
+     ![](./media/image18.png)
 
 6.  In your **Azure AI service** window, navigate to the **Resource
     Management** section, and click on **Keys and Endpoints**.
 
-![](./media/image19.png)
+     ![](./media/image19.png)
 
 7.  In **Keys and Endpoints** page, copy **KEY1, KEY 2,**
     **Location/Region** and **Endpoint** values and paste them in a
     notepad as shown in the below image, then **Save** the notepad to
     use the information in the upcoming lab.
 
-![](./media/image20.png)
+     ![](./media/image20.png)
 
 ## **Task 3: Create a Fabric workspace**
 
@@ -176,46 +176,47 @@ dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and
 reports.
 
 1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL: !!https://app.fabric.microsoft.com/!! then press
+    the following URL: +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button.
 
-> ![A search engine window with a red box Description automatically
-> generated with medium confidence](./media/image21.png)
+      ![](./media/image21.png)
 
 2.  In the **Microsoft Fabric** window, enter your **Microsoft 365**
     credentials, and click on the **Submit** button.
 
-> ![A close up of a white and green object Description automatically
-> generated](./media/image22.png)
+      ![](./media/image22.png)
 
 3.  Then, In the **Microsoft** window enter the password and click on
-    the **Sign in** button**.**
+    the **Sign in** button . 
 
-> ![A login screen with a red box and blue text Description
-> automatically generated](./media/image23.png)
+      ![](./media/image23.png)
 
 4.  In **Stay signed in?** window, click on the **Yes** button.
 
-> ![A screenshot of a computer error Description automatically
-> generated](./media/image24.png)
+      ![](./media/image24.png)
 
 5.  You’ll be directed to Power BI Home page.
 
-![](./media/image25.png)
+      ![](./media/image25.png)
 
 8.  Go back to **Power BI** window. On the left side navigation menu of
     Power BI Home page, navigate and click on **Workspaces**.
 
-![](./media/image26.png)
+     ![](./media/image26.png)
 
 9.  In the Workspaces pane, click on **+** **New workspace** button**.**
 
-> ![](./media/image27.png)
+      ![](./media/image27.png)
 
 10. In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
-[TABLE]
+|	||
+|-------|-------|
+|Name | +++AI-Fabric-XXX+++(XXX can be a unique number) 	|
+|Advanced |Under License mode, select Trial	|
+|Default storage format|Small dataset storage format	|
+|Template apps|Check the Develop template apps|
 
 > ![](./media/image28.png)
 
