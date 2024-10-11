@@ -57,76 +57,67 @@ five main pillars: Vision, Speech, Language, Web search, and Decision.
 ## Task 1: Assign Cognitive Services Contributor roles using the Azure portal
 
 1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL:
-    [*https://portal.azure.com/*](https://portal.azure.com/), then press
+    the following URL:+++https://portal.azure.com/+++, then press
     the **Enter** button.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image1.png)
+      ![](./media/image1.png)
 
 2.  In the **Microsoft Azure** window, enter your **Sign-in**
     credentials, and click on the **Next** button.
-
-![Graphical user interface, application Description automatically
-generated](./media/image2.png)
+      ![](./media/image2.png)
 
 3.  Then, enter the password and click on the **Sign in** button**.**
 
-> ![Graphical user interface, application, email Description
-> automatically generated](./media/image3.png)
+     ![](./media/image3.png)
 
 4.  In **Stay signed in?** window, click on the **Yes** button.
 
-> ![Graphical user interface, application Description automatically
-> generated](./media/image4.png)
+      ![](./media/image4.png)
 
 5.  Type in **Subscriptions** in the search bar and select
     **Subscriptions**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image5.png)
+     ![](./media/image5.png)
 
 6.  Click on your assigned **subscription**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image6.png)
+      ![](./media/image6.png)
 
 7.  From the left menu, click on the **Access control(IAM).**
 
-![](./media/image7.png)
+     ![](./media/image7.png)
 
 8.  On the Access control(IAM) page, Click +**Add** and select **Add
     role assignments.**
 
-![](./media/image8.png)
+      ![](./media/image8.png)
 
 9.  Type the **Cognitive Services Contributor** in the search box and
     select it. Click **Next**
 
-![](./media/image9.png)
+     ![](./media/image9.png)
 
 10. In the **Add role assignment** tab, select Assign access to User
     group or service principal. Under Members, click **+Select members**
 
-![](./media/image10.png)
+     ![](./media/image10.png)
 
 11. On the Select members tab , search your Azure OpenAI subscription
     and click **Select.**
 
-![](./media/image11.png)
+     ![](./media/image11.png)
 
 8.  In the **Add role assignment** page, Click **Review + Assign**, you
     will get a notification once the role assignment is complete.
 
-![](./media/image12.png)
+     ![](./media/image12.png)
 
-![](./media/image13.png)
+     ![](./media/image13.png)
 
 9.  You will see a notification – added as Cognitive Services
     Contributor for Azure Pass-Sponsorship.
 
-![A screenshot of a computer Description automatically
-generated](./media/image14.png)
+      ![](./media/image14.png)
 
 ## Task 2: Create a multi-service resource for Azure AI services
 
@@ -135,11 +126,17 @@ services** \> **Azure AI services multi-service account** in the portal.
 To create a multi-service resource follow these instructions:
 
 1.  Select this link to create a multi-service
-    resource: !!https://portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne!!
+    resource: +++https://portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne+++
 
 2.  On the **Create** page, provide the following information:
 
-[TABLE]
+|Project details	|Description|
+|-------|-------|
+|Subscription |Select one of your available Azure subscriptions	|
+|Resource group |Click on Create new> enter +++AI-FabricXX+++(XX can be a unique number)|
+|Region |Select the appropriate region for your CognitiveServices. In this lab, we have chosen the East US 2 region.	|
+|Name|Cognitive-serviceXXX( XXX can be a unique number|
+|Pricing tier|Standard S0
 
 3.  Configure other settings for your resource as needed, read and
     accept the conditions (as applicable), and then select **Review +
