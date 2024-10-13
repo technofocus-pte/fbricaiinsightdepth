@@ -1,4 +1,5 @@
-**Introduction **
+# **Use Case 06- Identifying and extracting text with Document Intelligence in Microsoft Fabric**
+**Introduction**
 
 Analyzing structured data has been an easy process for some time but the
 same cannot be said for unstructured data. Unstructured data, such as
@@ -17,8 +18,7 @@ language model (LLM) and you own data to generate responses.
 
 The architecture of such an application is as shown below:
 
-![Architecture diagram connecting Azure OpenAI with Azure AI Search and
-Document Intelligence](./media/image1.png)
+  ![](./media/image1.png)
 
 **Objective**
 
@@ -49,200 +49,212 @@ services** \> **Azure AI services multi-service account** in the portal.
 To create a multi-service resource follow these instructions:
 
 1.  Select this link to create a multi-service
-    resource: https://portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne
+    resource: +++https://portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne+++
 
 2.  On the **Create** page, provide the following information:
 
-[TABLE]
+|Project details	|Description|
+|-------|-------|
+|Subscription |Select one of your available Azure subscriptions	|
+|Resource group |Click on Create new> enter AI-FabricXX(XX can be a unique number)|
+|Region |Select the appropriate region for your CognitiveServices. In this lab, we have chosen the East US 2 region.	|
+|Name|Cognitive-serviceXXX( XXX can be a unique number, you can add more digits after XXX to make the name unique)|
+|Pricing tier|Standard S0
 
 3.  Configure other settings for your resource as needed, read and
     accept the conditions (as applicable), and then select **Review +
     create**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image2.png)
+     ![](./media/image2.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image3.png)
+     ![](./media/image3.png)
 
 4.  In the **Review+submit** tab, once the Validation is Passed, click
     on the **Create** button.
 
-![A screenshot of a computer Description automatically
-generated](./media/image4.png)
-
+      ![](./media/image4.png)
+  
 5.  After the deployment is completed, click on the **Go to resource**
     button.
 
-![A screenshot of a computer Description automatically
-generated](./media/image5.png)
+     ![](./media/image5.png)
 
 6.  In your **Azure** **AI service** window, navigate to the **Resource
     Management** section, and click on **Keys and Endpoints**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image6.png)
+     ![](./media/image6.png)
 
 7.  In **Keys and Endpoints** page, copy **KEY1, KEY 2,** and
     **Endpoint** values and paste them in a notepad as shown in the
     below image, then **Save** the notepad to use the information in the
     upcoming tasks.
 
-![](./media/image7.png)
+     ![](./media/image7.png)
 
 ## **Task 2: Create a key vault using the Azure portal**
 
 1.  In Azure portal home page, click on **+ Create Resource**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image8.png)
+     ![](./media/image8.png)
 
 2.  In the **Create a resource** page search bar, type **Key vault** and
-    click on the appeared **Key vault** .![](./media/image9.png)
+    click on the appeared **Key vault** .
+     ![](./media/image9.png)
 
-3.  Click on **Key Vault** section.
+4.  Click on **Key Vault** section.
 
-> ![](./media/image10.png)
+      ![](./media/image10.png)
 
 4.  On the **Create a key Vault** page, provide the following
     information and click on **Review+create** button.
 
-[TABLE]
+|Field	|Description|
+|-------|-------|
+|Subscription |Select your Azure OpenAI subscription	|
+|Resource group Select your Resource group(that you have created in Task 1)	|
+|Region |EastUS 2	|
+|Name |fabrickeyvaultXX  (XXcan be unique number)|
+|Pricing Tier |Click on change Price Tire>select Standard |
 
 5.  Once the Validation is passed, click on the **Create**
-    button.![](./media/image11.png)
+    button.
+    ![](./media/image11.png)
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image12.png)
+     ![](./media/image12.png)
 
-5.  After the deployment is completed, click on the **Go to resource**
+6.  After the deployment is completed, click on the **Go to resource**
     button.
 
-> ![](./media/image13.png)
+      ![](./media/image13.png)
 
-6.  In your **fabrickeyvaultXX** window, from the left menu, click on
+7.  In your **fabrickeyvaultXX** window, from the left menu, click on
     the **Access control(IAM).**
 
-7.  On the Access control(IAM) page, Click +**Add** and select **Add
+8.  On the Access control(IAM) page, Click +**Add** and select **Add
     role assignments.**
 
-> ![](./media/image14.png)
+     ![](./media/image14.png)
 
-5.  In **Job function roles,** type the !!**Key vault administrator!!**
+9.  In **Job function roles,** type the !!**Key vault administrator!!**
     in the search box and select it. Click **Next**
 
-> ![](./media/image15.png)
+     ![](./media/image15.png)
 
-6.  In the **Add role assignment** tab, select Assign access to User
+10.  In the **Add role assignment** tab, select Assign access to User
     group or service principal. Under Members, click **+Select members**
 
-> ![](./media/image16.png)
+     ![](./media/image16.png)
 
-7.  On the Select members tab, search your Azure OpenAI subscription and
+11.  On the Select members tab, search your Azure OpenAI subscription and
     click **Select.**
 
-> ![](./media/image17.png)
+      ![](./media/image17.png)
 
-8.  In the **Add role assignment** page, Click **Review + Assign**, you
+12.  In the **Add role assignment** page, Click **Review + Assign**, you
     will get a notification once the role assignment is complete.
 
-> ![](./media/image18.png)
->
-> ![](./media/image19.png)
+      ![](./media/image18.png)
+ 
+      ![](./media/image19.png)
 
-9.  You will see a notification – added as Azure AI Developer for
+13.  You will see a notification – added as Azure AI Developer for
     Azure-openai-testXX
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image20.png)
+     ![](./media/image20.png)
 
 ## Task 3: Create a secret using Azure Key vault
 
 1.  On the Key Vault left-hand sidebar, select **Objects** then
     select **Secrets**.
 
-> ![](./media/image21.png)
+    ![](./media/image21.png)
 
 2.  Select **+ Generate/Import**.
 
-> ![](./media/image22.png)
+    ![](./media/image22.png)
 
 3.  On the **Create a secret** page, provide the following information
     and click on **Create** button .
 
-[TABLE]
-
-![](./media/image23.png)
+|	||
+|-------|-------|
+|Upload options |Manual	|
+|Name |Enter the name +++aisearchkey+++	|
+|Secret Value |password321	|
+>
+     ![](./media/image23.png)
 
 4.  Select **+ Generate/Import**.
 
-![](./media/image24.png)
+     ![](./media/image24.png)
 
 5.  On the **Create a secret** page, provide the following information
     and click on **Create** button .
 
-[TABLE]
-
-![](./media/image25.png)
-
-![](./media/image26.png)
+|	|  |
+|-------|-------|
+|Upload options |Manual	|
+|Name |Enter the name +++aiservicekey+++	|
+|Secret Value |password321	|
+     ![](./media/image25.png)
+     ![](./media/image26.png)
 
 6.  In **Key vault** page, copy **Key vault** name, and **Secrets**
     values and paste them in a notepad as shown in the below image, then
     **Save** the notepad to use the information in the upcoming tasks.
 
-![](./media/image27.png)
+     ![](./media/image27.png)
 
 ## **Task 4: Create an Azure AI Search service in the portal**
 
 1.  In Azure portal home page, click on **+ Create Resource**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image8.png)
+      ![](./media/image8.png)
 
 2.  In the **Create a resource** page search bar, type **Azure AI
     Search** and click on the appeared **azure ai search**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image28.png)
+      ![](./media/image28.png)
 
 3.  Click on **azure ai search** section.
 
-![A screenshot of a computer Description automatically
-generated](./media/image29.png)
+      ![](./media/image29.png)
 
 4.  In the **Azure AI Search** page, click on the **Create** button.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image30.png)
+      ![](./media/image30.png)
 
 5.  On the **Create a search service** page, provide the following
     information and click on **Review+create** button.
 
-[TABLE]
+|Field	|Description|
+|------|------|
+|Subscription	| Select your Azure OpenAI subscription |
+|Resource group	| Select your Resource group(that you have created )|
+|Region | EastUS 2 |
+|Name	| mysearchserviceXX  (XXcan be unique number)|
+|Pricing Tier	| Click on change Price Tire>select Basic|
+>
+     ![](./media/image31.png)
 
-![](./media/image31.png)
+     ![](./media/image32.png)
 
-![A screenshot of a computer Description automatically
-generated](./media/image32.png)
-
-![](./media/image33.png)
+      ![](./media/image33.png)
 
 6.  Once the Validation is passed, click on the **Create** button.
 
-![A screenshot of a search engine Description automatically
-generated](./media/image34.png)
+     ![](./media/image34.png)
 
-8.  After the deployment is completed, click on the **Go to resource**
+7.  After the deployment is completed, click on the **Go to resource**
     button.
 
-![](./media/image35.png)
+     ![](./media/image35.png)
 
-9.  copy **AI search name** and paste them in a notepad as shown in the
+8.  copy **AI search name** and paste them in a notepad as shown in the
     below image, then **Save** the notepad to use the information in the
     upcoming lab.
 
-![](./media/image36.png)
+    ![](./media/image36.png)
 
 ## Task 5: Create Fabric Capacity and Workspace
 
@@ -265,56 +277,54 @@ resource from the Azure portal, and search for Fabric.
     represented by three horizontal bars on the left side of the
     Microsoft Azure command bar as shown in the below image.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image37.png)
+    ![](./media/image37.png)
 
 2.  Navigate and click on **+ Create a resource**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image38.png)
+     ![](./media/image38.png)
 
 3.  On **Create a resource** page, in the **Search services and
     marketplace** search bar, type+++ **Fabric+++**, then select
     **Microsoft fabric**.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image39.png)
+      ![](./media/image39.png)
 
 4.  In the **Marketplace** page, navigate to the **Microsoft Fabric**
     section, click on the Create button dropdown, then select
     **Microsoft Fabric** as shown in the image.
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image40.png)
+     ![](./media/image40.png)
 
 5.  In the **Create Fabric capacity** window, under the **Basics** tab,
     enter the following details and click on the **Review+create**
     button.
 
-[TABLE]
+|  |  |
+|-----|-----|
+|Subscription	|Select the assigned subscription|
+|Resource group	|Select your Resource group(that you have created in Task 1)|
+|Capacity name	|+++fabriccapacity45+++( XXX can be a unique number, you can add more digits after XXX to make the name unique)|
+|Region	|Select West US 3|
+|Size	|Click on Change size> select F4 SKU and click on Select button|
 
-> ![](./media/image41.png)
 >
-> ![A screenshot of a computer screen Description automatically
-> generated](./media/image42.png)
->
-> ![](./media/image43.png)
+      ![](./media/image41.png)
+      ![](./media/image42.png)
+      ![](./media/image43.png)
 
 6.  In the **Review+submit** tab, once the Validation is Passed, click
     on the **Create** button.
 
-> ![](./media/image44.png)
->
-> ![A screenshot of a computer Description automatically
-> generated](./media/image45.png)
+      ![](./media/image44.png)
+ 
+      ![](./media/image45.png)
 
 7.  After the deployment is completed, click on the **Go to resource**
     button.
 
-> ![](./media/image46.png)
->
-> ![A screenshot of a computer Description automatically
-> generated](./media/image47.png)
+     ![](./media/image46.png)
+ 
+     ![](./media/image47.png)
 
 ## **Task 6: Create a Fabric workspace**
 
@@ -324,46 +334,39 @@ dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and
 reports.
 
 1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL: https://app.fabric.microsoft.com/ then press the
+    the following URL: +++https://app.fabric.microsoft.com/+++ then press the
     **Enter** button.
 
-> ![A search engine window with a red box Description automatically
-> generated with medium confidence](./media/image48.png)
+      ![](./media/image48.png)
 
 2.  In the **Microsoft Fabric** window, enter your **Microsoft 365**
     credentials, and click on the **Submit** button.
 
-> ![A close up of a white and green object Description automatically
-> generated](./media/image49.png)
+      ![](./media/image49.png)
 
 3.  Then, In the **Microsoft** window enter the password and click on
     the **Sign in** button**.**
 
-> ![A login screen with a red box and blue text Description
-> automatically generated](./media/image50.png)
+      ![](./media/image50.png)
 
 4.  In **Stay signed in?** window, click on the **Yes** button.
 
-> ![A screenshot of a computer error Description automatically
-> generated](./media/image51.png)
+      ![](./media/image51.png)
 
 5.  You’ll be directed to Power BI Home page.
 
-![A screenshot of a computer Description automatically
-generated](./media/image52.png)
+      ![](./media/image52.png)
 
-10. Go back to **Power BI** window. On the left side navigation menu of
+6. Go back to **Power BI** window. On the left side navigation menu of
     Power BI Home page, navigate and click on **Workspaces**.
 
-![A screenshot of a computer Description automatically
-generated](./media/image53.png)
+     ![](./media/image53.png)
 
-11. In the Workspaces pane, click on **+** **New workspace** button**.**
+7. In the Workspaces pane, click on **+** **New workspace** button**.**
 
-> ![A screenshot of a computer Description automatically
-> generated](./media/image54.png)
+     ![](./media/image54.png)
 
-12. In the **Create a workspace** pane that appears on the right side,
+8. In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
 [TABLE]
