@@ -1,4 +1,4 @@
-# Lab 01: Train and track machine learning models with MLflow in Microsoft Fabric
+# Use Case 01: Train and track machine learning models with MLflow in Microsoft Fabric
 
 **Introduction**
 
