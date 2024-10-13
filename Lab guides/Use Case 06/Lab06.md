@@ -58,7 +58,7 @@ To create a multi-service resource follow these instructions:
 |Subscription |Select one of your available Azure subscriptions	|
 |Resource group |Click on Create new> enter AI-FabricXX(XX can be a unique number)|
 |Region |Select the appropriate region for your CognitiveServices. In this lab, we have chosen the East US 2 region.	|
-|Name|Cognitive-serviceXXX( XXX can be a unique number, you can add more digits after XXX to make the name unique)|
+|Name|+++Cognitive-serviceXXX+++( XXX can be a unique number, you can add more digits after XXX to make the name unique)|
 |Pricing tier|Standard S0
 
 3.  Configure other settings for your resource as needed, read and
@@ -113,7 +113,7 @@ To create a multi-service resource follow these instructions:
 |Subscription |Select your Azure OpenAI subscription	|
 |Resource group Select your Resource group(that you have created in Task 1)	|
 |Region |EastUS 2	|
-|Name |fabrickeyvaultXX  (XXcan be unique number)|
+|Name |+++fabrickeyvaultXX+++(XXcan be unique number)|
 |Pricing Tier |Click on change Price Tire>select Standard |
 
 5.  Once the Validation is passed, click on the **Create**
@@ -135,7 +135,7 @@ To create a multi-service resource follow these instructions:
 
      ![](./media/image14.png)
 
-9.  In **Job function roles,** type the !!**Key vault administrator!!**
+9.  In **Job function roles,** type the **+++Key vault administrator+++**
     in the search box and select it. Click **Next**
 
      ![](./media/image15.png)
