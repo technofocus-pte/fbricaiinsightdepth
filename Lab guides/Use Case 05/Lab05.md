@@ -1,4 +1,4 @@
-# **Lab 05-Performing Sentiment analysis and Text translation with AI Skills in Microsoft Fabric**
+# **Use Case 05-Performing Sentiment analysis and Text translation with AI Skills in Microsoft Fabric**
 **Introduction**
 
 Azure AI services help developers and organizations rapidly create
