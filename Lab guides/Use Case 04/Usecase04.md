@@ -1,4 +1,4 @@
-# Lab 04- Chatting with your data using AI Skills in Microsoft Fabric
+# Use Case 04- Chatting with your data using AI Skills in Microsoft Fabric
 
 With the Microsoft Fabric AI skill, you can make data more accessible to
 your colleagues. You can configure a generative AI system to generate
