@@ -126,19 +126,17 @@ trial enabled.
 4.  In the **Create a workspace tab**, enter the following details and
     click on the **Apply** button.
 
-Name	TrainModel_FabricXX (XX can be a unique number) (here, we entered TrainModel_Fabric29)
-Advanced	Under License mode, select Trial
-Default storage format	Small dataset storage format
-|	                      |                                                   |
-|-----------------------|---------------------------------------------------|
-|Name                   |TrainModel_FabricXX (XX can be a unique number) 	  |
-|Advanced               |Under License mode, select Trial                 	|
-|Default storage format |Small dataset storage format   	                  |
+    |	                      |                                                   |
+    |-----------------------|---------------------------------------------------|
+    |Name                   |TrainModel_FabricXX (XX can be a unique number) 	  |
+    |Advanced               |Under License mode, select Trial                 	|
+    |Default storage format |Small dataset storage format   	                  |
+    
      ![](./media/image18.png)
      ![](./media/image19.png)
       ![](./media/image20.png)
 
-5.  Wait for the deployment to complete. It takes 2-3 minutes to
+6.  Wait for the deployment to complete. It takes 2-3 minutes to
     complete. When your new workspace opens, it should be empty.
 
 ## Task 3: Create a lakehouse and upload files
@@ -209,7 +207,8 @@ rendered.
 5.  Use the **🖉 (Edit**) button to switch the cell to editing mode, then
     delete the content and enter the following text:
 
-> +++# Train a machine learning model and track with MLflow+++
+     +++# Train a machine learning model and track with MLflow+++
+    
      ![](./media/image31.png)
      ![](./media/image32.png)
 
@@ -242,27 +241,28 @@ and columns.
 4.  In your notebook, use the **+ Code** icon below the latest cell
     output to add a new code cell to the notebook.
 
-> **Tip**: To see the **+ Code** icon, move the mouse to just below and
-> to the left of the output from the current cell. Alternatively, in the
-> menu bar, on the **Edit** tab, select **+ Add code cell**.
+   **Tip**: To see the **+ Code** icon, move the mouse to just below and
+   to the left of the output from the current cell. Alternatively, in the
+   menu bar, on the **Edit** tab, select **+ Add code cell**.
 
 5.  Enter the following code in it:
-```
-# Azure storage access info for open dataset diabetes
-blob_account_name = "azureopendatastorage"
-blob_container_name = "mlsamples"
-blob_relative_path = "diabetes"
-blob_sas_token = r"" # Blank since container is Anonymous access
-    
-# Set Spark config to access  blob storage
-wasbs_path = f"wasbs://%s@%s.blob.core.windows.net/%s" % (blob_container_name, blob_account_name, blob_relative_path)
-spark.conf.set("fs.azure.sas.%s.%s.blob.core.windows.net" % (blob_container_name, blob_account_name), blob_sas_token)
-print("Remote blob path: " + wasbs_path)
-    
-# Spark read parquet, note that it won't load any data yet by now
-df = spark.read.parquet(wasbs_path)
-```
-   ![](./media/image37.png)
+   
+      ```
+      # Azure storage access info for open dataset diabetes
+      blob_account_name = "azureopendatastorage"
+      blob_container_name = "mlsamples"
+      blob_relative_path = "diabetes"
+      blob_sas_token = r"" # Blank since container is Anonymous access
+          
+      # Set Spark config to access  blob storage
+      wasbs_path = f"wasbs://%s@%s.blob.core.windows.net/%s" % (blob_container_name, blob_account_name, blob_relative_path)
+      spark.conf.set("fs.azure.sas.%s.%s.blob.core.windows.net" % (blob_container_name, blob_account_name), blob_sas_token)
+      print("Remote blob path: " + wasbs_path)
+          
+      # Spark read parquet, note that it won't load any data yet by now
+      df = spark.read.parquet(wasbs_path)
+      ```
+     ![](./media/image37.png)
 
 6.  Use the **▷ Run cell** button on the left of the cell to run it.
     Alternatively, you can press **SHIFT** + **ENTER** on your keyboard
@@ -270,27 +270,28 @@ df = spark.read.parquet(wasbs_path)
 
       ![](./media/image38.png)
 
-> **Note**: Since this is the first time you’ve run any Spark code in
-> this session, the Spark pool must be started. This means that the
-> first run in the session can take a minute or so to complete.
-> Subsequent runs will be quicker.
+     **Note**: Since this is the first time you’ve run any Spark code in
+     this session, the Spark pool must be started. This means that the
+     first run in the session can take a minute or so to complete.
+     Subsequent runs will be quicker.
 
 7.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
-
-      +++display(df)+++
-
+     ```
+     display(df)
+     ```
 8.  When the cell command has completed, review the output below the
     cell, which should look similar to this:
 
      ![](./media/image39.png)
 
-> The output shows the rows and columns of the diabetes dataset
+    The output shows the rows and columns of the diabetes dataset
 
 9.  The data is loaded as a Spark dataframe. Scikit-learn will expect
     the input dataset to be a Pandas dataframe. Run the code below to
     convert your dataset to a Pandas dataframe:
+    
     ```
      import pandas as pd
      df = df.toPandas()
@@ -307,7 +308,8 @@ the Scikit-Learn library and track the model with MLflow.
 1.  Hover your mouse below the output cell, you’ll see the **+
     Code** icon. Click on the **+ Code** icon and enter the following
     code in the cell. Use the **▷ Run cell** button on the left of the
-    cell to run it
+    cell to run it.
+    
     ```
      from sklearn.model_selection import train_test_split
     
@@ -315,15 +317,17 @@ the Scikit-Learn library and track the model with MLflow.
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
     ```
+    
      ![](./media/image41.png)
 
-2.  Add another new code cell to the notebook, enter the following code
+3.  Add another new code cell to the notebook, enter the following code
     in it, and run it:
-```
-import mlflow
-experiment_name = "experiment-diabetes"
-mlflow.set_experiment(experiment_name)
-```
+    
+    ```
+    import mlflow
+    experiment_name = "experiment-diabetes"
+    mlflow.set_experiment(experiment_name)
+    ```
   ![](./media/image42.png)
 
 The code creates an MLflow experiment named **experiment-diabetes**.
@@ -331,43 +335,43 @@ Your models will be tracked in this experiment.
 
 3.  Add another new code cell to the notebook, enter the following code
     in it, and run it.
-```
-from sklearn.linear_model import LinearRegression
-    
-with mlflow.start_run():
-   mlflow.autolog()
-    
-   model = LinearRegression()
-   model.fit(X_train, y_train)
-    
-   mlflow.log_param("estimator", "LinearRegression")
-```
-   ![](./media/image43.png)
+    ```
+    from sklearn.linear_model import LinearRegression
+        
+    with mlflow.start_run():
+       mlflow.autolog()
+        
+       model = LinearRegression()
+       model.fit(X_train, y_train)
+        
+       mlflow.log_param("estimator", "LinearRegression")
+    ```
+     ![](./media/image43.png)
 
-The code trains a regression model using Linear Regression. Parameters,
-metrics, and artifacts, are automatically logged with MLflow.
-Additionally, you’re logging a parameter called **estimator** with the
-value *LinearRegression*.
+    The code trains a regression model using Linear Regression. Parameters,
+    metrics, and artifacts, are automatically logged with MLflow.
+    Additionally, you’re logging a parameter called **estimator** with the
+    value **LinearRegression**.
 
 4.  Add another new code cell to the notebook, enter the following code
     in it, and run it.
-```
-from sklearn.tree import DecisionTreeRegressor
-    
-with mlflow.start_run():
-   mlflow.autolog()
-    
-   model = DecisionTreeRegressor(max_depth=5) 
-   model.fit(X_train, y_train)
-    
-   mlflow.log_param("estimator", "DecisionTreeRegressor")+++
-```
-  ![](./media/image44.png)
+    ```
+    from sklearn.tree import DecisionTreeRegressor
+        
+    with mlflow.start_run():
+       mlflow.autolog()
+        
+       model = DecisionTreeRegressor(max_depth=5) 
+       model.fit(X_train, y_train)
+        
+       mlflow.log_param("estimator", "DecisionTreeRegressor")+++
+    ```
+    ![](./media/image44.png)
 
-The code trains a regression model using Decision Tree Regressor.
-Parameters, metrics, and artifacts, are automatically logged with
-MLflow. Additionally, you’re logging a parameter
-called **estimator** with the value *DecisionTreeRegressor*.
+  The code trains a regression model using Decision Tree Regressor.
+  Parameters, metrics, and artifacts, are automatically logged with
+  MLflow. Additionally, you’re logging a parameter
+  called **estimator** with the value **DecisionTreeRegressor**.
 
 ## Task 7:Use MLflow to search and view your experiments
 
@@ -378,18 +382,20 @@ MLflow library to retrieve your experiments and its details.
     Code** icon below the cell output to add a new code cell to the
     notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
-```
-import mlflow
-experiments = mlflow.search_experiments()
-for exp in experiments:
-    print(exp.name)
-```
-   ![](./media/image45.png)
+    
+    ```
+    import mlflow
+    experiments = mlflow.search_experiments()
+    for exp in experiments:
+        print(exp.name)
+    ```
+    ![](./media/image45.png)
 
-2.  To retrieve a specific experiment, you can get it by its name. Use
+3.  To retrieve a specific experiment, you can get it by its name. Use
     the **+ Code** icon below the cell output to add a new code cell to
     the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
+    
     ```
     experiment_name = "experiment-diabetes"
     exp = mlflow.get_experiment_by_name(experiment_name)
@@ -397,12 +403,14 @@ for exp in experiments:
     ```
      ![](./media/image46.png)
 
-3.  Using an experiment name, you can retrieve all jobs of that
+5.  Using an experiment name, you can retrieve all jobs of that
     experiment. Use the **+ Code** icon below the cell output to add a
     new code cell to the notebook, and enter the following code in it.
     Use the **▷ Run cell** button on the left of the cell to run it.
 
-+++ mlflow.search_runs(exp.experiment_id)+++
+    ```
+    mlflow.search_runs(exp.experiment_id)
+    ```
      ![](./media/image47.png)
 
 4.  To more easily compare job runs and outputs, you can configure the
@@ -412,9 +420,10 @@ for exp in experiments:
 5.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it.
-
-+++ mlflow.search_runs(exp.experiment_id, order_by=\["start_time
-    DESC"\], max_results=2)+++
+    
+```
+ mlflow.search_runs(exp.experiment_id, order_by=\["start_time
+    DESC"\], max_results=2)
      ![](./media/image48.png)
 
 6.  Finally, you can plot the evaluation metrics of multiple models next
