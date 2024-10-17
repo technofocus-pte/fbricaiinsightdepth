@@ -88,7 +88,7 @@ with *notebooks*, *experiments*, and *models* in Microsoft Fabric.
 
      ![](./media/image11.png)
 
-7.  If prompted, agree to the terms and then select **Start trial**.
+7.  If prompted, agree to the terms and then select **Activate**.
 
      ![](./media/image12.png)
 
@@ -128,7 +128,7 @@ trial enabled.
 
     |	                      |                                                   |
     |-----------------------|---------------------------------------------------|
-    |Name                   |TrainModel_FabricXX (XX can be a unique number) 	  |
+    |Name                   |+++TrainModel_FabricXX+++ (XX can be a unique number) 	  |
     |Advanced               |Under License mode, select Trial                 	|
     |Default storage format |Small dataset storage format   	                  |
     
@@ -184,11 +184,11 @@ languages) as *experiments*.
     ![](./media/image26.png)
 
 2.  In the **Synapse Data Science** **Home** page, select
-    **Notebook**under current workspace of **TrainModel_FabricXX.**
+    **Notebook** under current workspace of **TrainModel_FabricXX.**
 
      ![](./media/image27.png)
 
-3.  After a few seconds, a new notebook containing a single *cell* will
+3.  After a few seconds, a new notebook containing a single cell will
     open. Notebooks are made up of one or more cells that can
     contain **code** or **markdown** (formatted text).
 
@@ -234,7 +234,7 @@ and columns.
 
       ![](./media/image35.png)
 3.  In **Choose the data you want to connect** page, select your
-    lakehouse i.e., **TrainModel**\_**Lakehouse**, then click on the
+    lakehouse i.e., **TrainModel_Lakehouse**, then click on the
     **Add** button.
       ![](./media/image36.png)
 
@@ -278,26 +278,27 @@ and columns.
 7.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
+    
      ```
      display(df)
      ```
-8.  When the cell command has completed, review the output below the
+9.  When the cell command has completed, review the output below the
     cell, which should look similar to this:
 
      ![](./media/image39.png)
 
     The output shows the rows and columns of the diabetes dataset
 
-9.  The data is loaded as a Spark dataframe. Scikit-learn will expect
+10.  The data is loaded as a Spark dataframe. Scikit-learn will expect
     the input dataset to be a Pandas dataframe. Run the code below to
     convert your dataset to a Pandas dataframe:
     
     ```
-     import pandas as pd
-     df = df.toPandas()
-     df.head()
+    import pandas as pd
+    df = df.toPandas()
+    df.head()
     ```
-      ![](./media/image40.png)
+  ![](./media/image40.png)
 
 ## Task 6: Train a machine learning model
 
@@ -311,16 +312,16 @@ the Scikit-Learn library and track the model with MLflow.
     cell to run it.
     
     ```
-     from sklearn.model_selection import train_test_split
+    from sklearn.model_selection import train_test_split
     
-     X, y = df[['AGE','SEX','BMI','BP','S1','S2','S3','S4','S5','S6']].values, df['Y'].values
+    X, y = df[['AGE','SEX','BMI','BP','S1','S2','S3','S4','S5','S6']].values, df['Y'].values
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=0)
     ```
     
      ![](./media/image41.png)
 
-3.  Add another new code cell to the notebook, enter the following code
+2.  Add another new code cell to the notebook, enter the following code
     in it, and run it:
     
     ```
@@ -335,7 +336,7 @@ Your models will be tracked in this experiment.
 
 3.  Add another new code cell to the notebook, enter the following code
     in it, and run it.
-    ```
+    ```    
     from sklearn.linear_model import LinearRegression
         
     with mlflow.start_run():
@@ -364,7 +365,7 @@ Your models will be tracked in this experiment.
        model = DecisionTreeRegressor(max_depth=5) 
        model.fit(X_train, y_train)
         
-       mlflow.log_param("estimator", "DecisionTreeRegressor")+++
+       mlflow.log_param("estimator", "DecisionTreeRegressor")
     ```
     ![](./media/image44.png)
 
@@ -391,7 +392,7 @@ MLflow library to retrieve your experiments and its details.
     ```
     ![](./media/image45.png)
 
-3.  To retrieve a specific experiment, you can get it by its name. Use
+2.  To retrieve a specific experiment, you can get it by its name. Use
     the **+ Code** icon below the cell output to add a new code cell to
     the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
@@ -421,10 +422,11 @@ MLflow library to retrieve your experiments and its details.
     to the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it.
     
-```
- mlflow.search_runs(exp.experiment_id, order_by=\["start_time
-    DESC"\], max_results=2)
-     ![](./media/image48.png)
+    ```
+    mlflow.search_runs(exp.experiment_id, order_by=["start_time DESC"], max_results=2)
+    ```
+    
+    ![](./media/image48.png)
 
 6.  Finally, you can plot the evaluation metrics of multiple models next
     to each other to easily compare models:
@@ -432,21 +434,22 @@ MLflow library to retrieve your experiments and its details.
 7.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it.
-```
-import matplotlib.pyplot as plt
-   
-df_results = mlflow.search_runs(exp.experiment_id, order_by=["start_time DESC"], max_results=2)[["metrics.training_r2_score", "params.estimator"]]
-   
-fig, ax = plt.subplots()
-ax.bar(df_results["params.estimator"], df_results["metrics.training_r2_score"])
-ax.set_xlabel("Estimator")
-ax.set_ylabel("R2 score")
-ax.set_title("R2 score by Estimator")
-for i, v in enumerate(df_results["metrics.training_r2_score"]):
-    ax.text(i, v, str(round(v, 2)), ha='center', va='bottom', fontweight='bold')
-plt.show()
-```
- ![](./media/image49.png)
+    
+    ```
+    import matplotlib.pyplot as plt
+       
+    df_results = mlflow.search_runs(exp.experiment_id, order_by=["start_time DESC"], max_results=2)[["metrics.training_r2_score", "params.estimator"]]
+       
+    fig, ax = plt.subplots()
+    ax.bar(df_results["params.estimator"], df_results["metrics.training_r2_score"])
+    ax.set_xlabel("Estimator")
+    ax.set_ylabel("R2 score")
+    ax.set_title("R2 score by Estimator")
+    for i, v in enumerate(df_results["metrics.training_r2_score"]):
+        ax.text(i, v, str(round(v, 2)), ha='center', va='bottom', fontweight='bold')
+    plt.show()
+    ```
+  ![](./media/image49.png)
 
 ## Task 8: Explore your experiments
 
