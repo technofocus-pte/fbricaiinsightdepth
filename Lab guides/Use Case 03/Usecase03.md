@@ -348,56 +348,50 @@ procurement, and other business-related considerations.
      ![](./media/image43.png)
 
 4.  Add a new measure for the MAPE.
-
-&nbsp;
-
-a)  Select **New measure** in the top ribbon. This action adds a new
-    item named **Measure** to the **Demand_Forecast_New_1** dataset, and
-    opens a formula bar above the table.
-
-      ![](./media/image44.png)
-
-b)  To determine the average the MAPE , replace Measure = in the formula
-    bar with:
-
-   > PythonCopy
-    +++MAPE_Value = AVERAGE(Demand_Forecast_New_1[MAPE])+++
-
-c)  To apply the formula, select the **check mark** in the formula bar.
-    The new measure appears in the data table. The calculator icon shows
-    it was created as a measure.
-
-     ![](./media/image45.png)
+    a)  Select **New measure** in the top ribbon. This action adds a new
+        item named **Measure** to the **Demand_Forecast_New_1** dataset, and
+        opens a formula bar above the table.
+    
+     ![](./media/image44.png)
+    
+    b)  To determine the average the MAPE , replace Measure = in the formula
+        bar with:
+       ```
+       MAPE_Value = AVERAGE(Demand_Forecast_New_1[MAPE])
+       ```
+    c)  To apply the formula, select the **check mark** in the formula bar.
+        The new measure appears in the data table. The calculator icon shows
+        it was created as a measure.
+    
+      ![](./media/image45.png)
 
 5.  Add a new measure that average the total number of forecasted sales
     . You'll need it for the rest of the new measures.
 
-&nbsp;
 
-a)  Select **New measure** in the top ribbon to add a new item
-    named **Measure** to the **Demand_Forecast_New_1**  dataset. This
-    action also opens a formula bar above the table.
+    a)  Select **New measure** in the top ribbon to add a new item
+        named **Measure** to the **Demand_Forecast_New_1**  dataset. This
+        action also opens a formula bar above the table.
+    
+        ```
+        Forecasted_Value = AVERAGE (Demand_Forecast_New_1[Forecasted_Sales])
+       ```
+    
+    b)  Select the **check mark** in the formula bar to apply the formula.
+   ![](./media/image46.png)
 
-> PythonCopy
- +++Forecasted_Value = AVERAGE (Demand_Forecast_New_1[Forecasted_Sales])+++
-
-b)  Select the **check mark** in the formula bar to apply the formula.
-
-     ![](./media/image46.png)
-
-6.  Add a new measure that counts the total number of actual sales .
+7.  Add a new measure that counts the total number of actual sales .
     You'll need it for the rest of the new measures.
 
-&nbsp;
-
 a)  Select **New measure** in the top ribbon to add a new item
     named **Measure** to the **Demand_Forecast_New_1**  dataset. This
     action also opens a formula bar above the table.
 
-    +++Actual_Value = AVERAGE (Demand_Forecast_New_1[Actual_Sales])+++
-
+    ```
+    Actual_Value = AVERAGE (Demand_Forecast_New_1[Actual_Sales])
+    ```
+    
 b)  Select the **check mark** in the formula bar to apply the formula.
-
     ![](./media/image47.png)
 
 7.  On the tools at the top of the dataset page, select **New report**
@@ -418,7 +412,7 @@ b)  Select the **check mark** in the formula bar to apply the formula.
 
      ![](./media/image50.png)
 
-    ![](./media/image51.png)
+     ![](./media/image51.png)
 
 10. In the Visualizations panel, select the **Slicer** icon. From
     the **Data** pane, select **Category**.
