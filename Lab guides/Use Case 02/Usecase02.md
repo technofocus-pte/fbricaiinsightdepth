@@ -50,11 +50,11 @@ Before working with data in Fabric, create a workspace with the Fabric
 trial enabled.
 
 1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL: <https://app.fabric.microsoft.com/> then press
+    the following URL: +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button.
 
-> **Note**: If you are directed to Microsoft Fabric Home page, then skip
-> steps from \#2 to \#4.
+  **Note**: If you are directed to Microsoft Fabric Home page, then skip
+    steps from \#2 to \#4.
       ![](./media/image1.png)
 
 2.  In the **Microsoft Fabric** window, enter your credentials, and
@@ -89,8 +89,8 @@ trial enabled.
     click on the **Apply** button.
     |                       |                                           |
     |-----------------------|-------------------------------------------|
-    |Name                   |Data-ScienceXX(XX can be a unique number) 	|
-    |Advanced               |Under License mode, select Trial	        |
+    |Name           |+++Data-ScienceXX+++(XX can be a unique number) |
+    |Advanced      |Under License mode, select Trial   |
     |Default storage format |Small dataset storage format	            |
      ![](./media/image8.png)
 
@@ -105,8 +105,8 @@ trial enabled.
 
 ## Task 2: Create a lakehouse and upload files
 
-Now that you have a workspace, it’s time to switch to the *Data
-engineering* experience in the portal and create a data lakehouse for
+Now that you have a workspace, it’s time to switch to the **Data
+engineering** experience in the portal and create a data lakehouse for
 the data files you’re going to analyze.
 
 1.  At the bottom left of the Power BI portal, select the **Power
@@ -118,10 +118,8 @@ the data files you’re going to analyze.
       ![](./media/image12.png)
 
 3.  In the **New lakehouse** dialog box, enter
-    **FabricData_Sciencelakehouse** in the **Name** field, click on the
+    **+++FabricData_Sciencelakehouse+++** in the **Name** field, click on the
     **Create** button and open the new lakehouse.
-
-      ![](./media/image13.png)
 
       ![](./media/image14.png)
 
@@ -312,8 +310,7 @@ contribute to the exited status.
       ![](./media/image39.png)
 
 9.  Use Data Wrangler to perform initial data cleansing, under the
-    notebook ribbon select **Data** tab , dropdown the **Launch Data
-    Wrangler** and select the **df** data wrangler.
+    notebook ribbon  tab , dropdown the **Data Wrangler** and select the **df** data wrangler.
 
      ![](./media/image40.png)
 
@@ -325,12 +322,12 @@ contribute to the exited status.
 
      ![](./media/image41.png)
 
-12. Under the Target columns, select the **RowNumber and CustomerId**
-    check boxs**,** and then click on the **Apply** button.
+12. Under the Target columns, select the **RowNumber** and **CustomerId**
+    check boxs, and then click on the **Apply** button.
 
       ![](./media/image42.png)
 
-13. In df(Data Wrangler) pane, under **Operations** select the **Find
+13. In **df(Data Wrangler)** pane, under **Operations** select the **Find
     and replace\>Drop missing values.**
 
       ![](./media/image43.png)
@@ -380,20 +377,50 @@ contribute to the exited status.
 22. To show the distribution of exited versus non-exited customers
     across the categorical attributes. Select the code cell and click on
     the **play** button to execute cell.
+    
+        ```
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        import pandas as pd
+        
+        # Sample data to simulate df_clean DataFrame
+        data = {
+            'Geography': ['France', 'Spain', 'Germany', 'France', 'Spain', 'Germany'],
+            'Gender': ['Male', 'Female', 'Female', 'Male', 'Female', 'Male'],
+            'HasCrCard': [1, 0, 1, 0, 1, 0],
+            'IsActiveMember': [1, 0, 1, 0, 1, 0],
+            'NumOfProducts': [1, 2, 1, 2, 1, 2],
+            'Tenure': [5, 3, 6, 2, 8, 7],
+            'Exited': [0, 1, 0, 1, 0, 1]
+        }
+        
+        df_clean = pd.DataFrame(data)
+        
+        # Convert necessary columns to string to avoid AttributeError
+        df_clean['Geography'] = df_clean['Geography'].astype(str)
+        df_clean['Gender'] = df_clean['Gender'].astype(str)
+        df_clean['HasCrCard'] = df_clean['HasCrCard'].astype(str)
+        df_clean['IsActiveMember'] = df_clean['IsActiveMember'].astype(str)
+        df_clean['NumOfProducts'] = df_clean['NumOfProducts'].astype(str)
+        df_clean['Tenure'] = df_clean['Tenure'].astype(str)
+        df_clean['Exited'] = df_clean['Exited'].astype(str)
+        
+        attr_list = ['Geography', 'Gender', 'HasCrCard', 'IsActiveMember', 'NumOfProducts', 'Tenure']
+        fig, axarr = plt.subplots(2, 3, figsize=(15, 4))
+        for ind, item in enumerate(attr_list):
+            sns.countplot(x=item, hue='Exited', data=df_clean, ax=axarr[ind//3][ind%3])
+        fig.subplots_adjust(hspace=0.7)
+        plt.show()
+        ```
+ 
+      ![](./media/new11.png)
+      ![](./media/new12.png)
 
-     ![](./media/image53.png)
-
-23. Show the frequency distribution of numerical attributes using
+24. Show the frequency distribution of numerical attributes using
     histogram. Select the code cell and click on the **play** button to
     execute cell.
 
      ![](./media/image54.png)
-
-24. Perform the feature engineering generates new attributes based on
-    current attributes. Select the code cell and click on the **play**
-    button to execute cell.
-
-     ![](./media/image55.png)
 
 25. Perform the feature engineering generates new attributes based on
     current attributes. Select the code cell and click on the **play**
@@ -401,37 +428,43 @@ contribute to the exited status.
 
      ![](./media/image55.png)
 
-26. Use the **Data Wrangler** to perform one-hot encoding, under the
+26. Perform the feature engineering generates new attributes based on
+    current attributes. Select the code cell and click on the **play**
+    button to execute cell.
+
+     ![](./media/image55.png)
+
+27. Use the **Data Wrangler** to perform one-hot encoding, under the
     notebook ribbon select **Data** tab , dropdown the **Launch Data
     Wrangler** and select the **df** data wrangler.
 
       ![](./media/image56.png)
 
-27. In df(Data Wrangler) pane, under **Operations** select the
+28. In df(Data Wrangler) pane, under **Operations** select the
     **Formulas\>One-hot encode.**
 
       ![](./media/image57.png)
 
-28. Under the Target columns, select the **Geography** and **Gender**
+29. Under the Target columns, select the **Geography** and **Gender**
     check boxs, and then click on the **Apply** button.
 
      ![](./media/image58.png)
 
-29. In df(Data Wrangler) pane, select the **+Add code to notebook.**
+30. In df(Data Wrangler) pane, select the **+Add code to notebook.**
 
      ![](./media/image59.png)
 
-30. Code generated by Data Wrangler, Select the **df_copy()** data and
+31. Code generated by Data Wrangler, Select the **df_copy()** data and
     replace with **df_clean.copy ()**.
 
-31. Select the code cell and click on the **play** button to execute
+32. Select the code cell and click on the **play** button to execute
     cell.
 
      ![](./media/image60.png)
 
     ![](./media/image61.png)
 
-32. Create a delta table for the cleaned data, select the code cell and
+33. Create a delta table for the cleaned data, select the code cell and
     click on the **play** button to execute cell.
 
      ![](./media/image62.png)
@@ -464,7 +497,7 @@ contribute to the exited status.
     restarted after %pip install, so you'll need to install the library
     before you run any other cells.
 
-6.  Select the code cell and click on the play button to execute cell.
+6.  Select the **code cell** and click on the **play** button to execute cell.
 
     ![](./media/image65.png)
 
@@ -524,34 +557,69 @@ contribute to the exited status.
      ![](./media/image72.png)
 
 18. Train the model using Random Forest with maximum depth of 4 and 4
-    features. Select the code cell and click on the play button to
+    features. Select the code cell, **replace** the code and click on the **play** button to
     execute cell.
 
-     ![](./media/image73.png)
+    ```
+    from collections import Counter
+    from imblearn.over_sampling import SMOTE
+    import pandas as pd
+    
+    # Sample data to simulate X_train and y_train DataFrames
+    data = {
+        'Feature1': [1, 2, 3, 4, 5],
+        'Feature2': [5, 4, 3, 2, 1],
+        'Feature3': ['A', 'B', 'C', 'D', 'E']
+    }
+    X_train = pd.DataFrame(data)
+    y_train = pd.Series([0, 1, 0, 1, 0])
+    
+    # Convert necessary columns to numeric to avoid ValueError
+    X_train['Feature1'] = pd.to_numeric(X_train['Feature1'], errors='coerce')
+    X_train['Feature2'] = pd.to_numeric(X_train['Feature2'], errors='coerce')
+    
+    # Handle non-numeric columns by encoding them
+    X_train['Feature3'] = X_train['Feature3'].astype('category').cat.codes
+    
+    # Define the random state seed
+    SEED = 42
+    
+    # Apply SMOTE with n_neighbors parameter set to avoid the ValueError
+    sm = SMOTE(random_state=SEED, k_neighbors=1)
+    X_res, y_res = sm.fit_resample(X_train, y_train)
+    
+    # Combine the resampled data into a new DataFrame
+    new_train = pd.concat([X_res, y_res], axis=1)
+    
+    print(new_train)
+    ```  
 
-19. Train the model using Random Forest with maximum depth of 8 and 6
+     ![](./media/new13.png)
+     ![](./media/new14.png)
+
+20. Train the model using Random Forest with maximum depth of 8 and 6
     features. Select the code cell and click on the play button to
     execute cell.
 
     ![](./media/image74.png)
  
-20. Train the model using LightGBM. Select the code cell and click on
+21. Train the model using LightGBM. Select the code cell and click on
     the play button to execute cell.
 
       ![](./media/image75.png)
 
-21. The experiment runs are automatically saved in the experiment
+22. The experiment runs are automatically saved in the experiment
     artifact that can be found from the workspace. They're named based
     on the name used for setting the experiment. All of the trained
     machine learning models, their runs, performance metrics, and model
     parameters are logged.
 
-22. Now, click on **Data_ScienceXX** workspace on the left-sided
+23. Now, click on **Data_ScienceXX** workspace on the left-sided
     navigation pane.
 
      ![](./media/image76.png)
 
-23. Find and select the experiment name, in this
+24. Find and select the experiment name, in this
     case ***bank-churn-experiment***. If you don't see the experiment in
     your workspace, refresh your browser.
 
@@ -559,30 +627,30 @@ contribute to the exited status.
  
      ![](./media/image78.png)
 
-24. Now, click on **Data_ScienceXX** workspace on the left-sided
+25. Now, click on **Data_ScienceXX** workspace on the left-sided
     navigation pane.
 
      ![](./media/image76.png)
 
-25. On the Data-ScienceXX workspace homepage, select the
+26. On the Data-ScienceXX workspace homepage, select the
     **3-train-evaluate** notebook.
 
      ![](./media/image79.png)
 
-26. Open the saved experiment from the workspace, load the machine
+27. Open the saved experiment from the workspace, load the machine
     learning models, and then assess the performance of the loaded
     models on the validation dataset. Select the code cell and click on
     the play button to execute cell.
 
     ![](./media/image80.png)
 
-27. Directly assess the performance of the trained machine learning
+28. Directly assess the performance of the trained machine learning
     models on the validation dataset. Select the code cell and click on
     the play button to execute cell.
 
      ![](./media/image81.png)
 
-28. Next, develop a script to plot the confusion matrix in order to
+29. Next, develop a script to plot the confusion matrix in order to
     evaluate the accuracy of the classification using the validation
     dataset. The confusion matrix can be plotted using SynapseML tools
     as well, Select the code cell and click on the play button to
@@ -592,19 +660,19 @@ contribute to the exited status.
 
     ![](./media/image83.png)
 
-29. Confusion Matrix for Random Forest Classifier with maximum depth of
+30. Confusion Matrix for Random Forest Classifier with maximum depth of
     4 and 4 features. Select the code cell and click on the play button
     to execute cell.
 
     ![](./media/image84.png)
 
-30. Confusion Matrix for Random Forest Classifier with maximum depth of
+31. Confusion Matrix for Random Forest Classifier with maximum depth of
     8 and 6 features. Select the code cell and click on the play button
     to execute cell.
 
      ![](./media/image85.png)
 
-31. Confusion Matrix for LightGBM. Select the code cell and click on the
+32. Confusion Matrix for LightGBM. Select the code cell and click on the
     play button to execute cell.
 
      ![](./media/image86.png)
