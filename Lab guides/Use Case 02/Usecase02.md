@@ -377,42 +377,21 @@ contribute to the exited status.
 22. To show the distribution of exited versus non-exited customers
     across the categorical attributes. Select the code cell and click on
     the **play** button to execute cell.
+    ```
+    import seaborn as sns
+    import matplotlib.pyplot as plt
     
-        ```
-        import matplotlib.pyplot as plt
-        import seaborn as sns
-        import pandas as pd
-        
-        # Sample data to simulate df_clean DataFrame
-        data = {
-            'Geography': ['France', 'Spain', 'Germany', 'France', 'Spain', 'Germany'],
-            'Gender': ['Male', 'Female', 'Female', 'Male', 'Female', 'Male'],
-            'HasCrCard': [1, 0, 1, 0, 1, 0],
-            'IsActiveMember': [1, 0, 1, 0, 1, 0],
-            'NumOfProducts': [1, 2, 1, 2, 1, 2],
-            'Tenure': [5, 3, 6, 2, 8, 7],
-            'Exited': [0, 1, 0, 1, 0, 1]
-        }
-        
-        df_clean = pd.DataFrame(data)
-        
-        # Convert necessary columns to string to avoid AttributeError
-        df_clean['Geography'] = df_clean['Geography'].astype(str)
-        df_clean['Gender'] = df_clean['Gender'].astype(str)
-        df_clean['HasCrCard'] = df_clean['HasCrCard'].astype(str)
-        df_clean['IsActiveMember'] = df_clean['IsActiveMember'].astype(str)
-        df_clean['NumOfProducts'] = df_clean['NumOfProducts'].astype(str)
-        df_clean['Tenure'] = df_clean['Tenure'].astype(str)
-        df_clean['Exited'] = df_clean['Exited'].astype(str)
-        
-        attr_list = ['Geography', 'Gender', 'HasCrCard', 'IsActiveMember', 'NumOfProducts', 'Tenure']
-        fig, axarr = plt.subplots(2, 3, figsize=(15, 4))
-        for ind, item in enumerate(attr_list):
-            sns.countplot(x=item, hue='Exited', data=df_clean, ax=axarr[ind//3][ind%3])
-        fig.subplots_adjust(hspace=0.7)
-        plt.show()
-        ```
- 
+    # Convert 'Exited' column to string type
+    df_clean['Exited'] = df_clean['Exited'].astype(str)
+    
+    attr_list = ['Geography', 'Gender', 'HasCrCard', 'IsActiveMember', 'NumOfProducts', 'Tenure']
+    fig, axarr = plt.subplots(2, 3, figsize=(15, 8))  # Adjusted figsize for better spacing
+    for ind, item in enumerate(attr_list):
+        sns.countplot(x=item, hue='Exited', data=df_clean, ax=axarr[ind//3][ind%3])
+        axarr[ind//3][ind%3].legend(loc='upper right', title='Exited')  # Adjust legend location and title
+    fig.subplots_adjust(hspace=0.7)
+    plt.show()
+    ```
       ![](./media/new11.png)
       ![](./media/new12.png)
 
