@@ -62,7 +62,7 @@ Azure Pass, another Azure Pass will not be issued.
 
      ![](./media/image7.png)
 
-    ![](./media/image8.png)
+     ![](./media/image8.png)
 
 4.  Crosscheck the Email ID and then click on the **Confirm Microsoft
     Account**.
@@ -187,13 +187,13 @@ resource from the Azure portal, and search for Fabric.
     enter the following details and click on the **Review+create**
     button.
 
-|	             |                                                                                               |
-|---------------|-----------------------------------------------------------------------------------------------|
-|Subscription   |Select the assigned subscription	                                                             |
-|Resource group |Resource group	Click on Create new> enter +++AI-Skill-FabricXXX+++(XXX can be a unique number)|
-|Capacity name  |+++aiskillfabric789+++( XXX can be a unique number) 	                                        |
-|Region         |Select near by available region, in this lab West US 3 is using for this resource              |
-|Size           |select F64 SKU                                                                                 |
+   |	             |                                                                                               |
+   |---------------|-----------------------------------------------------------------------------------------------|
+   |Subscription   |Select the assigned subscription	                                                             |
+   |Resource group |Resource group	Click on Create new> enter +++AI-Skill-FabricXXX+++(XXX can be a unique number)|
+   |Capacity name  |+++aiskillfabric789+++( XXX can be a unique number) 	                                        |
+   |Region         |Select near by available region, in this lab West US 3 is using for this resource              |
+   |Size           |select F64 SKU                                                                                 |
     ![](./media/image29.png)
     ![](./media/image30.png)
 
@@ -253,13 +253,13 @@ reports.
 8.  In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
-|	       |      |
-|-------|-------|
-|Name                   |+++Data-FactoryXX+++ (XX can be a unique number) |
-|Advanced               |Under License mode, select Fabric 	|
-|Default storage format |Small dataset storage format	|
-|Capacity               |aiskillfabricXXX             |
-|Template apps          |Check the Develop template apps| 
+   |	       |      |
+   |-------|-------|
+   |Name                   |+++Data-FactoryXX+++ (XX can be a unique number) |
+   |Advanced               |Under License mode, select Fabric 	|
+   |Default storage format |Small dataset storage format	|
+   |Capacity               |aiskillfabricXXX             |
+   |Template apps          |Check the Develop template apps| 
     ![](./media/image38.png)
     ![](./media/image39.png)
 
@@ -348,23 +348,23 @@ notebook. Use the notebook to populate the lakehouse with the data.
 1.  In the query editor, copy and paste the following code. Select
     the **Run all** button to execute the query. After the query is
     completed, you will see the results.
-```
-import pandas as pd
-from tqdm.auto import tqdm
-base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
-
-# load list of tables
-df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
-
-for table in (pbar := tqdm(df_tables['table'].values)):
-    pbar.set_description(f"Uploading {table} to lakehouse")
-
-    # download
-    df = pd.read_parquet(f"{base}/{table}.parquet")
-
-    # save as lakehouse table
-    spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
-```
+   ```
+   import pandas as pd
+   from tqdm.auto import tqdm
+   base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
+   
+   # load list of tables
+   df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
+   
+   for table in (pbar := tqdm(df_tables['table'].values)):
+       pbar.set_description(f"Uploading {table} to lakehouse")
+   
+       # download
+       df = pd.read_parquet(f"{base}/{table}.parquet")
+   
+       # save as lakehouse table
+       spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
+   ```
    ![](./media/image51.png)
 
    ![](./media/image52.png)
@@ -399,27 +399,27 @@ After a few minutes, the lakehouse is populated with the necessary data.
 5.  You must then select the tables for which you want the AI skill to
     have available access.
 
-This lab uses these tables:
-
-- DimCustomer
-
-- DimDate
-
-- DimGeography
-
-- DimProduct
-
-- DimProductCategory
-
-- DimPromotion
-
-- DimReseller
-
-- DimSalesTerritory
-
-- FactInternetSales
-
-- FactResellerSales
+      This lab uses these tables:
+      
+      - DimCustomer
+      
+      - DimDate
+      
+      - DimGeography
+      
+      - DimProduct
+      
+      - DimProductCategory
+      
+      - DimPromotion
+      
+      - DimReseller
+      
+      - DimSalesTerritory
+      
+      - FactInternetSales
+      
+      - FactResellerSales
 
 **Important Note:** If you face any SKU issues, please check the
 workspace License info.
@@ -443,7 +443,7 @@ workspace License info.
 4.  Select FactResellerSales and enter the following text and click on
     the **Submit icon** as shown in the below image.
 
-+++What is our most sold product?+++
+   +++What is our most sold product?+++
       ![](./media/image62.png)
 
 As you continue to experiment with queries, you should add more
@@ -452,21 +452,21 @@ instructions.
 5.  Select the **dimcustomer** , enter the following text and click on
     the **Submit icon**
 
-**+++how many active customers did we have June 1st, 2013?+++**
+   **+++how many active customers did we have June 1st, 2013?+++**
     ![](./media/image63.png)
      ![](./media/image64.png)
 
 6.  Select the **dimdate,** **FactInternetSales** , enter the following
     text and click on the **Submit icon**
 
-**+++what are the monthly sales trends for the last year?+++**
+   **+++what are the monthly sales trends for the last year?+++**
      ![](./media/image65.png)
      ![](./media/image66.png)
 
 7.  Select the **dimproduct,** **FactInternetSales** , enter the
     following text and click on the **Submit icon**
 
-**+++which product category had the highest average sales price?+++**
+   **+++which product category had the highest average sales price?+++**
      ![](./media/image67.png)
      ![](./media/image68.png)
 
@@ -543,38 +543,38 @@ determine whether or not the AI skill has a published URL value.
 9.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, enter the following code in it and replace the
     **URL**. Click on **▷ Run** button and review the output
-```
-import requests
-import json
-import pprint
-from synapse.ml.mlflow import get_mlflow_env_config
+   ```
+   import requests
+   import json
+   import pprint
+   from synapse.ml.mlflow import get_mlflow_env_config
+   
+   
+   # the URL could change if the workspace is assigned to a different capacity
+   url = "https://<generic published URL value>"
+   
+   configs = get_mlflow_env_config()
+   
+   headers = {
+       "Authorization": f"Bearer {configs.driver_aad_token}",
+       "Content-Type": "application/json; charset=utf-8"
+   }
+   
+   question = "{userQuestion: \"what is an example product?\"}"
+   
+   response = requests.post(url, headers=headers, data = question)
+   
+   print("RESPONSE: ", response)
+   
+   print("")
+   
+   response = json.loads(response.content)
+   
+   print(response["result"])
+   ```
+   ![](./media/image80.png)
 
-
-# the URL could change if the workspace is assigned to a different capacity
-url = "https://<generic published URL value>"
-
-configs = get_mlflow_env_config()
-
-headers = {
-    "Authorization": f"Bearer {configs.driver_aad_token}",
-    "Content-Type": "application/json; charset=utf-8"
-}
-
-question = "{userQuestion: \"what is an example product?\"}"
-
-response = requests.post(url, headers=headers, data = question)
-
-print("RESPONSE: ", response)
-
-print("")
-
-response = json.loads(response.content)
-
-print(response["result"])
-```
-![](./media/image80.png)
-
-![](./media/image81.png)
+   ![](./media/image81.png)
 
 ## Task 10: Delete the resources
 
