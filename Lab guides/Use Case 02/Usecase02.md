@@ -443,7 +443,7 @@ contribute to the exited status.
 
     ![](./media/image61.png)
 
-33. Create a delta table for the cleaned data, select the code cell and
+33. Create a delta table for the cleaned data, select the code cell replace the Line 3 – changed to **df_clean**
     click on the **play** button to execute cell.
 
      ![](./media/image62.png)
@@ -531,8 +531,21 @@ contribute to the exited status.
     effectively learn the decision boundary. SMOTE is the most widely
     used approach to synthesize new samples for the minority class.
 
-17. Select the code cell and click on the play button to execute cell.
-
+17. Select the code cell, replace the existing code with the code below, and click the play button to execute it.
+    
+    ```
+    # If X_train contains categorical columns, encode them first
+    X_train_encoded = pd.get_dummies(X_train)
+    
+    
+    # Now, apply SMOTE
+    sm = SMOTE(random_state=SEED)
+    X_res, y_res = sm.fit_resample(X_train_encoded, y_train)
+    
+    
+    # Combine the resampled data
+    new_train = pd.concat([pd.DataFrame(X_res), pd.DataFrame(y_res, columns=['target'])], axis=1)
+    ```
      ![](./media/image72.png)
 
 18. Train the model using Random Forest with maximum depth of 4 and 4
@@ -576,16 +589,70 @@ contribute to the exited status.
      ![](./media/new13.png)
      ![](./media/new14.png)
 
-20. Train the model using Random Forest with maximum depth of 8 and 6
-    features. Select the code cell and click on the play button to
-    execute cell.
+19. Train the model using Random Forest with maximum depth of 8 and 6
+    features. Select the code cell, replace the existing code with the code below, and click the play button to execute it.
 
+    ```
+    # Encode X_val the same way as X_train
+    X_val_encoded = pd.get_dummies(X_val)
+    X_res_encoded = pd.get_dummies(X_res)
+    
+    
+    # Ensure X_res_encoded and X_val_encoded have the same columns
+    X_val_encoded = X_val_encoded.reindex(columns=X_res_encoded.columns, fill_value=0)
+    
+    
+    # Now execute your code
+    with mlflow.start_run(run_name="rfc2_sm") as run:
+       rfc2_sm_run_id = run.info.run_id
+       print("run_id: {}; status: {}".format(rfc2_sm_run_id, run.info.status))
+       rfc2_sm.fit(X_res_encoded, y_res.ravel())
+       rfc2_sm.score(X_val_encoded, y_val)
+       y_pred = rfc2_sm.predict(X_val_encoded)
+       cr_rfc2_sm = classification_report(y_val, y_pred)
+       cm_rfc2_sm = confusion_matrix(y_val, y_pred)
+    ```
     ![](./media/image74.png)
  
-21. Train the model using LightGBM. Select the code cell and click on
+20. Train the model using LightGBM. Select the code cell,replace the existing code with the code below and click on
     the play button to execute cell.
 
-      ![](./media/image75.png)
+    ```
+    # Ensure that the columns of X_res and X_val are aligned
+    X_res_encoded = pd.get_dummies(X_res)
+    X_val_encoded = pd.get_dummies(X_val)
+    
+    
+    # Align the columns of X_val_encoded to match those of X_res_encoded
+    X_val_encoded = X_val_encoded.reindex(columns=X_res_encoded.columns, fill_value=0)
+    
+    
+    # Now run the code to train and validate the model
+    mlflow.lightgbm.autolog(registered_model_name='lgbm_sm')
+    
+    
+    lgbm_sm_model = LGBMClassifier(
+       learning_rate = 0.07,
+       max_delta_step = 2,
+       n_estimators = 100,
+       max_depth = 10,
+       eval_metric = "logloss",
+       objective='binary',
+       random_state=42
+    )
+    
+    
+    with mlflow.start_run(run_name="lgbm_sm") as run:
+       lgbm1_sm_run_id = run.info.run_id
+       print("run_id: {}; status: {}".format(lgbm1_sm_run_id, run.info.status))
+       lgbm_sm_model.fit(X_res_encoded, y_res.ravel())
+       y_pred = lgbm_sm_model.predict(X_val_encoded)
+       accuracy = accuracy_score(y_val, y_pred)
+       cr_lgbm_sm = classification_report(y_val, y_pred)
+       cm_lgbm_sm = confusion_matrix(y_val, y_pred)
+       roc_auc_lgbm_sm = roc_auc_score(y_res, lgbm_sm_model.predict_proba(X_res_encoded)[:, 1])
+    ```
+    ![](./media/image75.png)
 
 22. The experiment runs are automatically saved in the experiment
     artifact that can be found from the workspace. They're named based
