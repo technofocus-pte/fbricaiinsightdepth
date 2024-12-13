@@ -63,7 +63,7 @@ trial enabled.
       ![](./media/image2.png)
 
 3.  Then, In the **Microsoft** window enter the password and click on
-    the **Sign in** button**.**
+    the **Sign in** button.
 
      ![](./media/image3.png)
 
@@ -81,7 +81,7 @@ trial enabled.
 
      ![](./media/image6.png)
 
-7.  In the Workspaces pane, select **+** **New workspace**.
+7.  In the Workspaces pane, select **+New workspace**.
 
       ![](./media/image7.png)
 
@@ -90,7 +90,7 @@ trial enabled.
     |                       |                                           |
     |-----------------------|-------------------------------------------|
     |Name           |+++Data-ScienceXX+++(XX can be a unique number) |
-    |Advanced      |Under License mode, select Trial   |
+    |Advanced      |Under License mode, select **Trial**   |
     |Default storage format |Small dataset storage format	            |
      ![](./media/image8.png)
 
@@ -109,8 +109,7 @@ Now that you have a workspace, it’s time to switch to the **Data
 engineering** experience in the portal and create a data lakehouse for
 the data files you’re going to analyze.
 
-1.  At the bottom left of the Power BI portal, select the **Power
-    BI** icon and switch to the **Data Engineering** experience.
+1.  At the bottom left of the Power BI portal, select the **Power BI** icon and switch to the **Data Engineering** experience.
 
 2.  In the **Synapse Data Engineering** home page, Select
     **Lakehouse(Preview)** under **New** pane.
@@ -185,8 +184,7 @@ workspace.
 
      ![](./media/image25.png)
 
-2.  In the **Add lakehouse** box, select the **Existing
-    lakehouse** radio button and click on the **Add** button.
+2.  In the **Add lakehouse** box, select the **Existing lakehouse** radio button and click on the **Add** button.
 
       ![](./media/image26.png)
 
@@ -333,7 +331,7 @@ contribute to the exited status.
       ![](./media/image43.png)
 
 14. Under the Target columns, select the **RowNumber, CustomerId,
-    Surname** check boxs**,** and then click on the **Apply** button.
+    Surname** check boxs, and then click on the **Apply** button.
 
       ![](./media/image44.png)
 
@@ -342,7 +340,7 @@ contribute to the exited status.
 
       ![](./media/image45.png)
 
-16. Under the Target columns, select the **Select all** check box**,**
+16. Under the Target columns, select the **Select all** check box,
     and then click on the **Apply** button.
       ![](./media/image46.png)
 
@@ -508,7 +506,7 @@ contribute to the exited status.
     notebook. Use scikit-learn and lightgbm to implement the models
     within a few lines of code.
 
-13. Select the code cell and click on the play button to execute cell.
+13. Select the **code cell** and click on the **play** button to execute cell.
 
       ![](./media/image69.png)
 
@@ -590,7 +588,7 @@ contribute to the exited status.
      ![](./media/new14.png)
 
 19. Train the model using Random Forest with maximum depth of 8 and 6
-    features. Select the code cell, replace the existing code with the code below, and click the play button to execute it.
+    features. Select the **code cell**, replace the existing code with the code below, and click the **play** button to execute it.
 
     ```
     # Encode X_val the same way as X_train
@@ -617,42 +615,42 @@ contribute to the exited status.
 20. Train the model using LightGBM. Select the code cell,replace the existing code with the code below and click on
     the play button to execute cell.
 
-    ```
-    # Ensure that the columns of X_res and X_val are aligned
-    X_res_encoded = pd.get_dummies(X_res)
-    X_val_encoded = pd.get_dummies(X_val)
-    
-    
-    # Align the columns of X_val_encoded to match those of X_res_encoded
-    X_val_encoded = X_val_encoded.reindex(columns=X_res_encoded.columns, fill_value=0)
-    
-    
-    # Now run the code to train and validate the model
-    mlflow.lightgbm.autolog(registered_model_name='lgbm_sm')
-    
-    
-    lgbm_sm_model = LGBMClassifier(
-       learning_rate = 0.07,
-       max_delta_step = 2,
-       n_estimators = 100,
-       max_depth = 10,
-       eval_metric = "logloss",
-       objective='binary',
-       random_state=42
-    )
-    
-    
-    with mlflow.start_run(run_name="lgbm_sm") as run:
-       lgbm1_sm_run_id = run.info.run_id
-       print("run_id: {}; status: {}".format(lgbm1_sm_run_id, run.info.status))
-       lgbm_sm_model.fit(X_res_encoded, y_res.ravel())
-       y_pred = lgbm_sm_model.predict(X_val_encoded)
-       accuracy = accuracy_score(y_val, y_pred)
-       cr_lgbm_sm = classification_report(y_val, y_pred)
-       cm_lgbm_sm = confusion_matrix(y_val, y_pred)
-       roc_auc_lgbm_sm = roc_auc_score(y_res, lgbm_sm_model.predict_proba(X_res_encoded)[:, 1])
-    ```
-    ![](./media/image75.png)
+        ```
+        # Ensure that the columns of X_res and X_val are aligned
+        X_res_encoded = pd.get_dummies(X_res)
+        X_val_encoded = pd.get_dummies(X_val)
+        
+        
+        # Align the columns of X_val_encoded to match those of X_res_encoded
+        X_val_encoded = X_val_encoded.reindex(columns=X_res_encoded.columns, fill_value=0)
+        
+        
+        # Now run the code to train and validate the model
+        mlflow.lightgbm.autolog(registered_model_name='lgbm_sm')
+        
+        
+        lgbm_sm_model = LGBMClassifier(
+           learning_rate = 0.07,
+           max_delta_step = 2,
+           n_estimators = 100,
+           max_depth = 10,
+           eval_metric = "logloss",
+           objective='binary',
+           random_state=42
+        )
+        
+        
+        with mlflow.start_run(run_name="lgbm_sm") as run:
+           lgbm1_sm_run_id = run.info.run_id
+           print("run_id: {}; status: {}".format(lgbm1_sm_run_id, run.info.status))
+           lgbm_sm_model.fit(X_res_encoded, y_res.ravel())
+           y_pred = lgbm_sm_model.predict(X_val_encoded)
+           accuracy = accuracy_score(y_val, y_pred)
+           cr_lgbm_sm = classification_report(y_val, y_pred)
+           cm_lgbm_sm = confusion_matrix(y_val, y_pred)
+           roc_auc_lgbm_sm = roc_auc_score(y_res, lgbm_sm_model.predict_proba(X_res_encoded)[:, 1])
+        ```
+     ![](./media/image75.png)
 
 22. The experiment runs are automatically saved in the experiment
     artifact that can be found from the workspace. They're named based
@@ -666,7 +664,7 @@ contribute to the exited status.
      ![](./media/image76.png)
 
 24. Find and select the experiment name, in this
-    case ***bank-churn-experiment***. If you don't see the experiment in
+    case **bank-churn-experiment**. If you don't see the experiment in
     your workspace, refresh your browser.
 
      ![](./media/image77.png)
@@ -710,7 +708,7 @@ contribute to the exited status.
     4 and 4 features. Select the code cell and click on the play button
     to execute cell.
 
-    ![](./media/image84.png)
+     ![](./media/image84.png)
 
 31. Confusion Matrix for Random Forest Classifier with maximum depth of
     8 and 6 features. Select the code cell and click on the play button
@@ -730,7 +728,7 @@ model that was trained in part 3 using the Microsoft Fabric MLflow model
 registry, and perform batch predictions on a test dataset loaded from a
 lakehouse.
 
-** **Microsoft Fabric allows you to operationalize machine learning
+Microsoft Fabric allows you to operationalize machine learning
 models with a scalable function called PREDICT, which supports batch
 scoring in any compute engine. You can generate batch predictions
 directly from a Microsoft Fabric notebook or from a given model's item
@@ -752,7 +750,7 @@ using one of following three ways:
 1.  Now, click on **FabricData_Sciencelakehouse** on the left-sided
     navigation pane
 
-    ![](./media/image63.png)
+     ![](./media/image63.png)
 
 2.  In the Fabric**Data_Sciencelakehouse** page, select **Open
     notebook** \> **Existing notebook** from the top navigation menu.
@@ -782,17 +780,17 @@ using one of following three ways:
     MLFlowTransformer object, you'll need to provide the following
     parameters:
 
-- The columns from the test DataFrame that you need as input to the
-  model (in this case, you would need all of them).
-
-- A name for the new output column (in this case, predictions).
-
-- The correct model name and model version to generate the predictions
-  (in this case, lgbm_sm and version 1).
+    - The columns from the test DataFrame that you need as input to the
+      model (in this case, you would need all of them).
+    
+    - A name for the new output column (in this case, predictions).
+    
+    - The correct model name and model version to generate the predictions
+      (in this case, lgbm_sm and version 1).
 
 7.  Select the code cell and click on the play button to execute cell.
 
-     ![](./media/image91.png)
+      ![](./media/image91.png)
 
 8.  Now that you have the MLFlowTransformer object, you can use it to
     generate batch predictions. Select the code cell and click on the
@@ -828,57 +826,53 @@ using one of following three ways:
      ![](./media/image96.png)
 
 3.  In the **New dataset** box, enter the dataset a name, such as **bank
-    churn predictions** .Then select
-    the **customer_churn_test_predictions** dataset and
+    churn predictions** .Then select the **customer_churn_test_predictions** dataset and
     select **Confirm**.
 
      ![](./media/image97.png)
 
 4.  Add a new measure for the churn rate.
 
+    a)  Select **New measure** in the top ribbon. This action adds a new
+        item named **Measure** to
+        the **customer_churn_test_predictions** dataset, and opens a formula
+        bar above the table.
+          ![](./media/image98.png)
+    
+    b)  To determine the average predicted churn rate, replace Measure = in
+        the formula bar with:
 
+    > PythonCopy
+      +++Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])+++
+          ![](./media/image99.png)
 
-a)  Select **New measure** in the top ribbon. This action adds a new
-    item named **Measure** to
-    the **customer_churn_test_predictions** dataset, and opens a formula
-    bar above the table.
-      ![](./media/image98.png)
+    c)  To apply the formula, select the **check mark** in the formula bar.
+        The new measure appears in the data table. The calculator icon shows
+        it was created as a measure.
+         ![](./media/image100.png)
 
-b)  To determine the average predicted churn rate, replace Measure = in
-    the formula bar with:
+    d)  Change the format from **General** to **Percentage** in
+        the **Properties** panel.
 
-> PythonCopy
-  +++Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])+++
-      ![](./media/image99.png)
-
-c)  To apply the formula, select the **check mark** in the formula bar.
-    The new measure appears in the data table. The calculator icon shows
-    it was created as a measure.
-     ![](./media/image100.png)
-
-d)  Change the format from **General** to **Percentage** in
-    the **Properties** panel.
-
-e)  Scroll down in the **Properties** panel to change the **Decimal
-    places** to 1.
-     ![](./media/image101.png)
+    e)  Scroll down in the **Properties** panel to change the **Decimal
+        places** to 1.
+         ![](./media/image101.png)
 
 5.  Add a new measure that counts the total number of bank customers.
     You'll need it for the rest of the new measures.
 
 
+    a)  Select **New measure** in the top ribbon to add a new item
+        named **Measure** to the customer_churn_test_predictions dataset.
+        This action also opens a formula bar above the table.
+         ![](./media/image102.png)
 
-a)  Select **New measure** in the top ribbon to add a new item
-    named **Measure** to the customer_churn_test_predictions dataset.
-    This action also opens a formula bar above the table.
-     ![](./media/image102.png)
+    b)  Each prediction represents one customer. To determine the total
+        number of customers, replace **Measure =** in the formula bar with:
 
-b)  Each prediction represents one customer. To determine the total
-    number of customers, replace Measure = in the formula bar with:
-
-   > PythonCopy
-+++Customers = COUNT(customer_churn_test_predictions[predictions])+++
-     ![](./media/image103.png)
+       > PythonCopy
+    +++Customers = COUNT(customer_churn_test_predictions[predictions])+++
+         ![](./media/image103.png)
 
 c)  Select the **check mark** in the formula bar to apply the formula.
      ![](./media/image104.png)
@@ -890,40 +884,42 @@ c)  Select the **check mark** in the formula bar to apply the formula.
         dataset. This action also opens a formula bar above the table.
          ![](./media/image105.png)
  
-   b.  To determine the churn rate for Germany, replace Measure = in the
+   b.  To determine the churn rate for Germany, replace **Measure =** in the
        formula bar with:
-
- +++Germany Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Germany] = 1)+++
+        ```
+        Germany Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Germany] = 1)
+        ``` 
       ![](./media/image106.png)
 
-This filters the rows down to the ones with Germany as their geography
-(Geography_Germany equals one).
+        This filters the rows down to the ones with Germany as their geography
+        (Geography_Germany equals one).
 
-c.  To apply the formula, select the **check mark** in the formula bar.
-     ![](./media/image107.png)
+    c.  To apply the formula, select the check mark in the formula bar.
+    
+  ![](./media/image107.png)
 
 7.  Repeat the above step to add the churn rates for France and Spain.
 
+    a)  **Spain's churn rate**: Select **New measure** in the top ribbon to
+        add a new item named **Measure** to the
+        customer_churn_test_predictions dataset. This action also opens a
+        formula bar above the table.
 
-a)  **Spain's churn rate**: Select **New measure** in the top ribbon to
-    add a new item named **Measure** to the
-    customer_churn_test_predictions dataset. This action also opens a
-    formula bar above the table.
+    b)  Select the **check mark** in the formula bar to apply the formula
+        ```
+        Spain Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Spain] = 1)
+        ```
+        ![](./media/image108.png)
 
-b)  Select the **check mark** in the formula bar to apply the formula
-
-+++Spain Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Spain] = 1)+++
-    ![](./media/image108.png)
-
-c)  France's churn rate: Select **New measure** in the top ribbon to add
-    a new item named **Measure** to the customer_churn_test_predictions
-    dataset. This action also opens a formula bar above the table.
-
-d)  Select the **check mark** in the formula bar to apply the formula
-
-
-+++France Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_France] = 1)+++
-    ![](./media/image109.png)
+    c)  France's churn rate: Select **New measure** in the top ribbon to add
+        a new item named **Measure** to the customer_churn_test_predictions
+        dataset. This action also opens a formula bar above the table.
+    
+    d)  Select the **check mark** in the formula bar to apply the formula
+        ```
+        France Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_France] = 1)
+        ```
+            ![](./media/image109.png)
 
 ## **Task 10: Create new report**
 
@@ -979,12 +975,12 @@ d)  Select the **check mark** in the formula bar to apply the formula
       ![](./media/image120.png)
 
 8.  In the Visualizations panel, select the **Clustered column
-    chart** card. Select **Germany Churn**, **Spain Churn**, **France
+    chart** card. Select **Germany Churn**,**Spain Churn**,**France
     Churn** in that order for the y-axis.
 
      ![](./media/image121.png)
  
-    ![](./media/image122.png)
+     ![](./media/image122.png)
 
 The Power BI report shows:
 
