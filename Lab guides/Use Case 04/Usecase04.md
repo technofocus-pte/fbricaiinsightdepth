@@ -48,14 +48,14 @@ capacity in the Azure portal.
 ## Task 0: Redeem Azure Pass
 
 1.  Open a new tab on your browser and enter the following link in the
-    address bar: <https://www.microsoftazurepass.com/>
+    address bar: +++https://www.microsoftazurepass.com/+++
 
 2.  Then, click on the **Start button.**
 
      ![](./media/image6.png)
 
-**Note**: Do not use your Company/Work Account to login to redeem the
-Azure Pass, another Azure Pass will not be issued.
+      **Note**: Do not use your Company/Work Account to login to redeem the
+      Azure Pass, another Azure Pass will not be issued.
 
 3.  Click on the **Resources** tab of the Lab VM and enter the **Office
     365 tenant credentials** to **Sign In**.
@@ -64,8 +64,7 @@ Azure Pass, another Azure Pass will not be issued.
 
      ![](./media/image8.png)
 
-4.  Crosscheck the Email ID and then click on the **Confirm Microsoft
-    Account**.
+4.  Crosscheck the Email ID and then click on the **Confirm Microsoft Account**.
 
      ![](./media/image9.png)
 
@@ -192,8 +191,8 @@ resource from the Azure portal, and search for Fabric.
    |Subscription   |Select the assigned subscription	                                                             |
    |Resource group |Resource group	Click on Create new> enter +++AI-Skill-FabricXXX+++(XXX can be a unique number)|
    |Capacity name  |+++aiskillfabric789+++( XXX can be a unique number) 	                                        |
-   |Region         |Select near by available region, in this lab West US 3 is using for this resource              |
-   |Size           |select F64 SKU                                                                                 |
+   |Region         |Select near by available region, in this lab **West US 3** is using for this resource  |
+   |Size           |select **F64 SKU**  |
     ![](./media/image29.png)
     ![](./media/image30.png)
 
@@ -246,22 +245,22 @@ reports.
 
      ![](./media/image36.png)
 
-7.  In the Workspaces pane, click on **+** **New workspace button.**
+7.  In the Workspaces pane, click on **+New workspace** button.
 
      ![](./media/image37.png)
 
 8.  In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
 
-   |	       |      |
-   |-------|-------|
-   |Name                   |+++Data-FactoryXX+++ (XX can be a unique number) |
-   |Advanced               |Under License mode, select Fabric 	|
-   |Default storage format |Small dataset storage format	|
-   |Capacity               |aiskillfabricXXX             |
-   |Template apps          |Check the Develop template apps| 
-    ![](./media/image38.png)
-    ![](./media/image39.png)
+      |	       |      |
+      |-------|-------|
+      |Name                   |+++Data-FactoryXX+++ (XX can be a unique number) |
+      |Advanced               |Under License mode, select Fabric 	|
+      |Default storage format |Small dataset storage format	|
+      |Capacity               |aiskillfabricXXX             |
+      |Template apps          |Check the Develop template apps| 
+       ![](./media/image38.png)
+       ![](./media/image39.png)
 
 9.  Wait for the deployment to complete. It takes 2-3 minutes to
     complete.
@@ -288,7 +287,6 @@ reports.
      ![](./media/image42.png)
 
      ![](./media/image43.png)
-
 
 4.  In **Admin portal** pane, select **Tenant settings**, scroll down to
     **Copilot and Azure OpenAI Service** section, click on **Data sent
@@ -318,10 +316,10 @@ reports.
       ![](./media/image46.png)
 
 3.  In the **New lakehouse** dialog box, enter
-    !!**AI_Fabric_lakehouseXX**!! in the **Name** field, click on the
+    +++AI_Fabric_lakehouseXX+++ in the **Name** field, click on the
     **Create** button and open the new lakehouse.
 
-> **Note**: Ensure to remove space before **AI_Fabric_lakehouseXX**.
+    **Note**: Ensure to remove space before **AI_Fabric_lakehouseXX**.
        ![](./media/image47.png)
 
 4.  You will see a notification stating **Successfully created SQL
@@ -348,23 +346,23 @@ notebook. Use the notebook to populate the lakehouse with the data.
 1.  In the query editor, copy and paste the following code. Select
     the **Run all** button to execute the query. After the query is
     completed, you will see the results.
-   ```
-   import pandas as pd
-   from tqdm.auto import tqdm
-   base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
-   
-   # load list of tables
-   df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
-   
-   for table in (pbar := tqdm(df_tables['table'].values)):
-       pbar.set_description(f"Uploading {table} to lakehouse")
-   
-       # download
-       df = pd.read_parquet(f"{base}/{table}.parquet")
-   
-       # save as lakehouse table
-       spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
-   ```
+      ```
+      import pandas as pd
+      from tqdm.auto import tqdm
+      base = "https://synapseaisolutionsa.blob.core.windows.net/public/AdventureWorks"
+      
+      # load list of tables
+      df_tables = pd.read_csv(f"{base}/adventureworks.csv", names=["table"])
+      
+      for table in (pbar := tqdm(df_tables['table'].values)):
+          pbar.set_description(f"Uploading {table} to lakehouse")
+      
+          # download
+          df = pd.read_parquet(f"{base}/{table}.parquet")
+      
+          # save as lakehouse table
+          spark.createDataFrame(df).write.mode('overwrite').saveAsTable(table)
+      ```
    ![](./media/image51.png)
 
    ![](./media/image52.png)
@@ -383,7 +381,7 @@ After a few minutes, the lakehouse is populated with the necessary data.
 
      ![](./media/image55.png)
 
-3.  In the **Create AI skill** dialog box, enter !!**AISkillsFabric**!!
+3.  In the **Create AI skill** dialog box, enter +++AISkillsFabric+++
     in the **Name** field, click on the **Create** button.
 
      ![](./media/image56.png)
@@ -393,7 +391,7 @@ After a few minutes, the lakehouse is populated with the necessary data.
     lakehouse i.e., **AI_Fbric_lakehouseXX**, then click on the
     **Confirm** button.
 
-     ![](./media/image57.png)
+      ![](./media/image57.png)
 
       ![](./media/image58.png)
 5.  You must then select the tables for which you want the AI skill to
@@ -421,9 +419,9 @@ After a few minutes, the lakehouse is populated with the necessary data.
       
       - FactResellerSales
 
-**Important Note:** If you face any SKU issues, please check the
-workspace License info.
-   ![](./media/image59.png)
+   **Important Note:** If you face any SKU issues, please check the
+   workspace License info.
+    ![](./media/image59.png)
 
 ## Task 8: Provide instructions
 
@@ -443,30 +441,30 @@ workspace License info.
 4.  Select FactResellerSales and enter the following text and click on
     the **Submit icon** as shown in the below image.
 
-   +++What is our most sold product?+++
+    +++What is our most sold product?+++
       ![](./media/image62.png)
 
-As you continue to experiment with queries, you should add more
-instructions.
+      As you continue to experiment with queries, you should add more
+      instructions.
 
 5.  Select the **dimcustomer** , enter the following text and click on
     the **Submit icon**
 
-   **+++how many active customers did we have June 1st, 2013?+++**
+    **+++how many active customers did we have June 1st, 2013?+++**
     ![](./media/image63.png)
      ![](./media/image64.png)
 
 6.  Select the **dimdate,** **FactInternetSales** , enter the following
     text and click on the **Submit icon**
 
-   **+++what are the monthly sales trends for the last year?+++**
+    **+++what are the monthly sales trends for the last year?+++**
      ![](./media/image65.png)
      ![](./media/image66.png)
 
 7.  Select the **dimproduct,** **FactInternetSales** , enter the
     following text and click on the **Submit icon**
 
-   **+++which product category had the highest average sales price?+++**
+    **+++which product category had the highest average sales price?+++**
      ![](./media/image67.png)
      ![](./media/image68.png)
 
@@ -490,7 +488,7 @@ sure that the AI handles the question correctly
     manually uploading the queries one by one.
 
 11.  Add all the queries and SQL queries that you have saved in Notepad,
-    and then click on ‘Download all as .json’.
+    and then click on Download all as **.json**.
 
      ![](./media/image71.png)
 
@@ -524,7 +522,7 @@ determine whether or not the AI skill has a published URL value.
 
       ![](./media/image76.png)
 
-5.  After publishing, select ‘Settings’ from the Home ribbon
+5.  After publishing, select **Settings** from the Home ribbon
 
       ![](./media/image77.png)
 
@@ -543,35 +541,35 @@ determine whether or not the AI skill has a published URL value.
 9.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, enter the following code in it and replace the
     **URL**. Click on **▷ Run** button and review the output
-   ```
-   import requests
-   import json
-   import pprint
-   from synapse.ml.mlflow import get_mlflow_env_config
-   
-   
-   # the URL could change if the workspace is assigned to a different capacity
-   url = "https://<generic published URL value>"
-   
-   configs = get_mlflow_env_config()
-   
-   headers = {
-       "Authorization": f"Bearer {configs.driver_aad_token}",
-       "Content-Type": "application/json; charset=utf-8"
-   }
-   
-   question = "{userQuestion: \"what is an example product?\"}"
-   
-   response = requests.post(url, headers=headers, data = question)
-   
-   print("RESPONSE: ", response)
-   
-   print("")
-   
-   response = json.loads(response.content)
-   
-   print(response["result"])
-   ```
+      ```
+      import requests
+      import json
+      import pprint
+      from synapse.ml.mlflow import get_mlflow_env_config
+      
+      
+      # the URL could change if the workspace is assigned to a different capacity
+      url = "https://<generic published URL value>"
+      
+      configs = get_mlflow_env_config()
+      
+      headers = {
+          "Authorization": f"Bearer {configs.driver_aad_token}",
+          "Content-Type": "application/json; charset=utf-8"
+      }
+      
+      question = "{userQuestion: \"what is an example product?\"}"
+      
+      response = requests.post(url, headers=headers, data = question)
+      
+      print("RESPONSE: ", response)
+      
+      print("")
+      
+      response = json.loads(response.content)
+      
+      print(response["result"])
+      ```
    ![](./media/image80.png)
 
    ![](./media/image81.png)
@@ -616,7 +614,7 @@ portal](https://portal.azure.com/?azure-portal=true).
 
       ![](./media/image87.png)
 
-8.  Select the ***...*** option under the workspace name and
+8.  Select the **...** option under the workspace name and
     select **Workspace settings**.
 
      ![](./media/image88.png)
