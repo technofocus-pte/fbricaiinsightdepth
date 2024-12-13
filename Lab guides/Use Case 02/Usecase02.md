@@ -92,6 +92,7 @@ trial enabled.
     |Name           |+++Data-ScienceXX+++(XX can be a unique number) |
     |Advanced      |Under License mode, select **Trial**   |
     |Default storage format |Small dataset storage format	            |
+
      ![](./media/image8.png)
 
      ![](./media/image9.png)
@@ -100,7 +101,7 @@ trial enabled.
  
     ![](./media/image11.png)
 
-9.  Wait for the deployment to complete. It takes 2-3 minutes to
+10.  Wait for the deployment to complete. It takes 2-3 minutes to
     complete. When your new workspace opens, it should be empty.
 
 ## Task 2: Create a lakehouse and upload files
@@ -116,8 +117,7 @@ the data files you’re going to analyze.
 
       ![](./media/image12.png)
 
-3.  In the **New lakehouse** dialog box, enter
-    **+++FabricData_Sciencelakehouse+++** in the **Name** field, click on the
+3.  In the **New lakehouse** dialog box, enter **+++FabricData_Sciencelakehouse+++** in the **Name** field, click on the
     **Create** button and open the new lakehouse.
 
       ![](./media/image14.png)
@@ -127,13 +127,11 @@ the data files you’re going to analyze.
 
       ![](./media/image15.png)
 
-5.  You will see a notification stating **Successfully created SQL
-    endpoint**.
+5.  You will see a notification stating **Successfully created SQL endpoint**.
 
      ![](./media/image16.png)
 
-10. At the bottom left of the Power BI portal, select the **Data
-    Engineering** icon and switch to the **Data Science** experience.
+10. At the bottom left of the Power BI portal, select the **Data Engineering** icon and switch to the **Data Science** experience.
 
      ![](./media/image17.png)
 
@@ -439,7 +437,7 @@ contribute to the exited status.
 
      ![](./media/image60.png)
 
-    ![](./media/image61.png)
+     ![](./media/image61.png)
 
 33. Create a delta table for the cleaned data, select the code cell replace the Line 3 – changed to **df_clean**
     click on the **play** button to execute cell.
@@ -842,7 +840,7 @@ using one of following three ways:
     b)  To determine the average predicted churn rate, replace Measure = in
         the formula bar with:
 
-    > PythonCopy
+        PythonCopy
       +++Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])+++
           ![](./media/image99.png)
 
@@ -855,7 +853,7 @@ using one of following three ways:
         the **Properties** panel.
 
     e)  Scroll down in the **Properties** panel to change the **Decimal
-        places** to 1.
+        places** to **1**.
          ![](./media/image101.png)
 
 5.  Add a new measure that counts the total number of bank customers.
@@ -870,8 +868,8 @@ using one of following three ways:
     b)  Each prediction represents one customer. To determine the total
         number of customers, replace **Measure =** in the formula bar with:
 
-       > PythonCopy
-    +++Customers = COUNT(customer_churn_test_predictions[predictions])+++
+         PythonCopy
+      +++Customers = COUNT(customer_churn_test_predictions[predictions])+++
          ![](./media/image103.png)
 
 c)  Select the **check mark** in the formula bar to apply the formula.
@@ -884,19 +882,19 @@ c)  Select the **check mark** in the formula bar to apply the formula.
         dataset. This action also opens a formula bar above the table.
          ![](./media/image105.png)
  
-   b.  To determine the churn rate for Germany, replace **Measure =** in the
+    b.  To determine the churn rate for Germany, replace **Measure =** in the
        formula bar with:
         ```
         Germany Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Germany] = 1)
         ``` 
-      ![](./media/image106.png)
+       ![](./media/image106.png)
 
         This filters the rows down to the ones with Germany as their geography
         (Geography_Germany equals one).
 
     c.  To apply the formula, select the check mark in the formula bar.
     
-  ![](./media/image107.png)
+    ![](./media/image107.png)
 
 7.  Repeat the above step to add the churn rates for France and Spain.
 
