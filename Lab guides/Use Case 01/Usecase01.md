@@ -70,7 +70,7 @@ with *notebooks*, *experiments*, and *models* in Microsoft Fabric.
      ![](./media/image7.png)
 
 3.  Then, In the **Microsoft** window enter the password and click on
-    the **Sign in** button**.**
+    the **Sign in** button.
 
      ![](./media/image8.png)
 
@@ -141,8 +141,8 @@ trial enabled.
 
 ## Task 3: Create a lakehouse and upload files
 
-Now that you have a workspace, it’s time to switch to the *Data
-science* experience in the portal and create a data lakehouse for the
+Now that you have a workspace, it’s time to switch to the Data
+science experience in the portal and create a data lakehouse for the
 data files you’re going to analyze.
 
 1.  At the bottom left of the Power BI portal, select the **Power
@@ -173,9 +173,9 @@ data files you’re going to analyze.
 
 ## Task 4: Create a notebook
 
-To train a model, you can create a *notebook*. Notebooks provide an
+To train a model, you can create a notebook. Notebooks provide an
 interactive environment in which you can write and run code (in multiple
-languages) as *experiments*.
+languages) as experiments.
 
 1.  At the bottom left of the TrainModel_Lakehouse page, select
     the **Data engineering** icon and switch to the **Data
@@ -194,9 +194,9 @@ languages) as *experiments*.
 
       ![](./media/image28.png)
 
-4.  Select the first cell (which is currently a *code* cell), and then
+4.  Select the first cell (which is currently a code cell), and then
     in the dynamic tool bar at its top-right, use the **M↓** button to
-    convert the cell to a *markdown* cell.
+    convert the cell to a markdown cell.
 
       ![](./media/image29.png)
       ![](./media/image30.png)
@@ -204,7 +204,7 @@ languages) as *experiments*.
 When the cell changes to a markdown cell, the text it contains is
 rendered.
 
-5.  Use the **🖉 (Edit**) button to switch the cell to editing mode, then
+5.  Use the **🖉 (Edit)** button to switch the cell to editing mode, then
     delete the content and enter the following text:
 
      +++# Train a machine learning model and track with MLflow+++
@@ -306,8 +306,7 @@ Now that you’ve loaded the data, you can use it to train a machine
 learning model and predict customer churn. You’ll train a model using
 the Scikit-Learn library and track the model with MLflow.
 
-1.  Hover your mouse below the output cell, you’ll see the **+
-    Code** icon. Click on the **+ Code** icon and enter the following
+1.  Hover your mouse below the output cell, you’ll see the **+ Code** icon. Click on the **+ Code** icon and enter the following
     code in the cell. Use the **▷ Run cell** button on the left of the
     cell to run it.
     
