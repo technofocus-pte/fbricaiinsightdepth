@@ -176,7 +176,7 @@ To create a multi-service resource follow these instructions:
 3.  On the **Create a secret** page, provide the following information
     and click on **Create** button .
 
-    |	||
+    |	|     |
     |-------|-------|
     |Upload options |Manual	|
     |Name |Enter the name +++aisearchkey+++	|
@@ -232,7 +232,7 @@ To create a multi-service resource follow these instructions:
     |Subscription	| Select your Azure OpenAI subscription |
     |Resource group	| Select your Resource group(that you have created )|
     |Region | EastUS 2 |
-    |Name	| mysearchserviceXX  (XXcan be unique number)|
+    |Name	| +++mysearchserviceXX+++  (XXcan be unique number)|
     |Pricing Tier	| Click on change Price Tire>select Basic|
     
      ![](./media/image31.png)
@@ -299,13 +299,13 @@ resource from the Azure portal, and search for Fabric.
     enter the following details and click on the **Review+create**
     button.
 
-    |  |  |
-    |-----|-----|
-    |Subscription	|Select the assigned subscription|
-    |Resource group	|Select your Resource group(that you have created in Task 1)|
-    |Capacity name	|+++fabriccapacity45+++( XXX can be a unique number, you can add more digits after XXX to make the name unique)|
-    |Region	|Select West US 3|
-    |Size	|Click on Change size> select F4 SKU and click on Select button|
+      |  |  |
+      |-----|-----|
+      |Subscription	|**Select the assigned subscription**|
+      |Resource group	|**Select your Resource group(that you have created in Task 1)**|
+      |Capacity name	|+++fabriccapacity45+++( XXX can be a unique number, you can add more digits after XXX to make the name unique)|
+      |Region	|Select **West US 3**|
+      |Size	|Click on Change size> select **F4 SKU** and click on **Select** button|
 
       ![](./media/image41.png)
       ![](./media/image42.png)
@@ -344,7 +344,7 @@ reports.
       ![](./media/image49.png)
 
 3.  Then, In the **Microsoft** window enter the password and click on
-    the **Sign in** button**.**
+    the **Sign in** button.
 
       ![](./media/image50.png)
 
@@ -361,7 +361,7 @@ reports.
 
      ![](./media/image53.png)
 
-7. In the Workspaces pane, click on **+** **New workspace** button**.**
+7. In the Workspaces pane, click on **+** **New workspace** button.
 
      ![](./media/image54.png)
 
@@ -370,9 +370,9 @@ reports.
    
     |  |  |
     |-----|------|
-    |Name	|+++Document Intelligence-FabricXX+++(XXX can be a unique number)|
-    |Advanced	|Select Fabric Capacity|
-    |Capacity |	Select Realtimefabriccapacity-West US 3|
+    |Name	|**+++Document Intelligence-FabricXX+++**(XXX can be a unique number)|
+    |Advanced	|Select **Fabric Capacity**|
+    |Capacity |	Select Realtimefabriccapacity-**West US 3**|
 
      ![](./media/image55.png)
      ![](./media/image56.png)
@@ -399,7 +399,7 @@ reports.
 
       ![](./media/image61.png)
 
-4.  In the **New lakehouse** dialog box, enter !!**data_lakehouse**!! in
+4.  In the **New lakehouse** dialog box, enter +++data_lakehouse+++ in
     the **Name** field, click on the **Create** button and open the new
     lakehouse.
 
