@@ -216,18 +216,18 @@ Name, Sales, Quantity, Discount, Profit.
     determine the variation of those four elements in the time series
     pattern. These elements include:
 
-- **Level:** Refers to the fundamental component that represents the
-  average value for a specific time period.
-
-- **Trend:** Describes whether the time series is decreasing, constant,
-  or increasing over time.
-
-- **Seasonality:** Describes the periodic signal in the time series and
-  looks for cyclic occurrences that affect the time series' increasing
-  or decreasing patterns.
-
-- **Noise/Residual:** Refers to the random fluctuations and variability
-  in the time series data that cannot be explained by the model.
+    - **Level:** Refers to the fundamental component that represents the
+      average value for a specific time period.
+    
+    - **Trend:** Describes whether the time series is decreasing, constant,
+      or increasing over time.
+    
+    - **Seasonality:** Describes the periodic signal in the time series and
+      looks for cyclic occurrences that affect the time series' increasing
+      or decreasing patterns.
+    
+    - **Noise/Residual:** Refers to the random fluctuations and variability
+      in the time series data that cannot be explained by the model.
 
 14. Select the code cell and click on the **play** button to execute
     cell.
@@ -351,48 +351,45 @@ procurement, and other business-related considerations.
     a)  Select **New measure** in the top ribbon. This action adds a new
         item named **Measure** to the **Demand_Forecast_New_1** dataset, and
         opens a formula bar above the table.
-    
-     ![](./media/image44.png)
+         ![](./media/image44.png)
     
     b)  To determine the average the MAPE , replace Measure = in the formula
         bar with:
-       ```
-       MAPE_Value = AVERAGE(Demand_Forecast_New_1[MAPE])
-       ```
+           ```
+           MAPE_Value = AVERAGE(Demand_Forecast_New_1[MAPE])
+           ```
     c)  To apply the formula, select the **check mark** in the formula bar.
         The new measure appears in the data table. The calculator icon shows
         it was created as a measure.
-    
-      ![](./media/image45.png)
+         ![](./media/image45.png)
 
 5.  Add a new measure that average the total number of forecasted sales
     . You'll need it for the rest of the new measures.
 
-
     a)  Select **New measure** in the top ribbon to add a new item
-        named **Measure** to the **Demand_Forecast_New_1**  dataset. This
-        action also opens a formula bar above the table.
-    
-        ```
-        Forecasted_Value = AVERAGE (Demand_Forecast_New_1[Forecasted_Sales])
-       ```
-    
-    b)  Select the **check mark** in the formula bar to apply the formula.
-   ![](./media/image46.png)
+            named **Measure** to the **Demand_Forecast_New_1**  dataset. This
+            action also opens a formula bar above the table.
+        
+            ```
+            Forecasted_Value = AVERAGE (Demand_Forecast_New_1[Forecasted_Sales])
+           ```
+        
+     b)  Select the **check mark** in the formula bar to apply the formula.
+           ![](./media/image46.png)
 
 7.  Add a new measure that counts the total number of actual sales .
     You'll need it for the rest of the new measures.
 
-a)  Select **New measure** in the top ribbon to add a new item
-    named **Measure** to the **Demand_Forecast_New_1**  dataset. This
-    action also opens a formula bar above the table.
+    a)  Select **New measure** in the top ribbon to add a new item
+        named **Measure** to the **Demand_Forecast_New_1**  dataset. This
+        action also opens a formula bar above the table.
 
-    ```
-    Actual_Value = AVERAGE (Demand_Forecast_New_1[Actual_Sales])
-    ```
+        ```
+        Actual_Value = AVERAGE (Demand_Forecast_New_1[Actual_Sales])
+        ```
     
-b)  Select the **check mark** in the formula bar to apply the formula.
-    ![](./media/image47.png)
+    b)  Select the **check mark** in the formula bar to apply the formula.
+        ![](./media/image47.png)
 
 7.  On the tools at the top of the dataset page, select **New report**
     to open the Power BI report authoring page.
@@ -452,7 +449,7 @@ b)  Select the **check mark** in the formula bar to apply the formula.
 
      ![](./media/image59.png)
 
-2.  Select the ***...*** option under the workspace name and
+2.  Select the **...** option under the workspace name and
     select **Workspace settings**.
 
      ![](./media/image60.png)
