@@ -20,7 +20,9 @@ database resources, and then generate and execute relevant T-SQL
 queries.
 
 **Important Note**: This lab will be executed in a simulated environment. Please follow the instructions in your browser after starting the lab from the link below. 
-[Click here to launch the lab](https://labs.technofocus.ai/psl/we60kaq)
+
+# **[Click here to launch the lab](https://labs.technofocus.ai/psl/we60kaq)**
+
 Passcode- **volts-018**
 
 
