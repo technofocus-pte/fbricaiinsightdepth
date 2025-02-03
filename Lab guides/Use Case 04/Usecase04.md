@@ -23,10 +23,6 @@ queries.
 
 ### [Click here to launch the lab] (https://labs.technofocus.ai/psl/we60kaq)
 
-text
-
-### [Click] (https://labs.technofocus.ai/psl/we60kaq)
-
 Passcode- **volts-018**
 
 
