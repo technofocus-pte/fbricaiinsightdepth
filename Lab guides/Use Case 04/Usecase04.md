@@ -21,11 +21,11 @@ queries.
 
 **Important Note**: This lab will be executed in a simulated environment. Please follow the instructions in your browser after starting the lab from the link below. 
 
- ### [Click here to launch the lab] (https://labs.technofocus.ai/psl/we60kaq)
+### [Click here to launch the lab] (https://labs.technofocus.ai/psl/we60kaq)
 
 text
 
-### [Click] (https://portal.azure.com)
+### [Click] (https://labs.technofocus.ai/psl/we60kaq)
 
 Passcode- **volts-018**
 
