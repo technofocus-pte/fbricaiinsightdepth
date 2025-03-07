@@ -82,9 +82,7 @@ trial enabled.
      ![](./media/image8.png)
 
      ![](./media/image9.png)
-
-    ![](./media/image10.png)
- 
+    
     ![](./media/image11.png)
 
 10.  Wait for the deployment to complete. It takes 2-3 minutes to
