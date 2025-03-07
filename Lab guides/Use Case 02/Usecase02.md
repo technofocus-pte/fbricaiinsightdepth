@@ -53,10 +53,6 @@ trial enabled.
     the following URL: +++https://app.fabric.microsoft.com/+++ then press
     the **Enter** button.
 
-  **Note**: If you are directed to Microsoft Fabric Home page, then skip
-    steps from \#2 to \#4.
-      ![](./media/image1.png)
-
 2.  In the **Microsoft Fabric** window, enter your credentials, and
     click on the **Submit** button.
 
@@ -100,35 +96,32 @@ Now that you have a workspace, it’s time to switch to the **Data
 engineering** experience in the portal and create a data lakehouse for
 the data files you’re going to analyze.
 
-1.  In the **Synapse Data Engineering** home page, Select
-    **Lakehouse(Preview)** under **New** pane.
+1.	In the Synapse Data Engineering home page, Select **+New item** and select **Lakehouse**
 
-      ![](./media/image12.png)
+      ![](./media/a2.png)
 
-3.  In the **New lakehouse** dialog box, enter **+++FabricData_Sciencelakehouse+++** in the **Name** field, click on the
+2.  In the **New lakehouse** dialog box, enter **+++FabricData_Sciencelakehouse+++** in the **Name** field, click on the
     **Create** button and open the new lakehouse.
 
-      ![](./media/image14.png)
+      ![](./media/a3png)
 
-4.  After a minute or so, a new empty lakehouse will be created. You
+3.  After a minute or so, a new empty lakehouse will be created. You
     need to ingest some data into the data lakehouse for analysis.
 
-      ![](./media/image15.png)
+      ![](./media/a4.png)
 
-5.  You will see a notification stating **Successfully created SQL endpoint**.
+4.  You will see a notification stating **Successfully created SQL endpoint**.
 
      ![](./media/image16.png)
 
-10. At the bottom left of the Power BI portal, select the **Data Engineering** icon and switch to the **Data Science** experience.
-
-     ![](./media/image17.png)
+5. Select Data-Science XX workspace
+     ![](./media/a5.png)
 
 ## **Task 3: Import tutorial notebooks**
 
-1.  On the Data science experience homepage, select **Import
-    notebook** and upload the notebook files.
+1.  On the Data science experience homepage, select Import and select From this computer upload the notebook files.
 
-     ![](./media/image18.png)
+     ![](./media/a6.png)
 
 2.  On the **Import status** pane that appears on the right side, click
     on **Upload** button and then browse to
@@ -168,18 +161,19 @@ workspace.
 1.  Select **Add lakehouse** in the left pane and select **Existing
     lakehouse** to open the **Data hub** dialog box.
 
-     ![](./media/image25.png)
+     ![](./media/a7.png)
+    ![](./media/a8.png)
 
-2.  In the **Add lakehouse** box, select the **Existing lakehouse** radio button and click on the **Add** button.
+3.  In the **Add lakehouse** box, select the **Existing lakehouse without Schema** radio button and click on the **Add** button.
 
-      ![](./media/image26.png)
+      ![](./media/a9.png)
 
-3.  In **OneLake data hub** tab, Select the
+4.  In **OneLake catalog** tab, Select the
     **FabricData_Sciencelakehouse** and select **Add**.
 
-      ![](./media/image27.png)
+      ![](./media/a10.png)
 
-4.  Once a lakehouse is added, it's visible in the lakehouse pane in the
+5.  Once a lakehouse is added, it's visible in the lakehouse pane in the
     notebook UI where tables and files stored in the lakehouse can be
     viewed.
 
