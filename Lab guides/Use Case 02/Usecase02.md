@@ -358,26 +358,26 @@ contribute to the exited status.
       ![](./media/image51.png)
       ![](./media/image52.png)
 
-22. To show the distribution of exited versus non-exited customers
-    across the categorical attributes. Select the code cell and click on
-    the **play** button to execute cell.
-    ```
-    import seaborn as sns
-    import matplotlib.pyplot as plt
-    
-    # Convert 'Exited' column to string type
-    df_clean['Exited'] = df_clean['Exited'].astype(str)
-    
-    attr_list = ['Geography', 'Gender', 'HasCrCard', 'IsActiveMember', 'NumOfProducts', 'Tenure']
-    fig, axarr = plt.subplots(2, 3, figsize=(15, 8))  # Adjusted figsize for better spacing
-    for ind, item in enumerate(attr_list):
-        sns.countplot(x=item, hue='Exited', data=df_clean, ax=axarr[ind//3][ind%3])
-        axarr[ind//3][ind%3].legend(loc='upper right', title='Exited')  # Adjust legend location and title
-    fig.subplots_adjust(hspace=0.7)
-    plt.show()
-    ```
-      ![](./media/new11.png)
-      ![](./media/new12.png)
+22.To show the distribution of exited versus non-exited customers across the categorical attributes, 
+   select the code, replace the existing code cell, and click on the play button to execute the cell
+
+        ```
+        import seaborn as sns
+        import matplotlib.pyplot as plt
+        
+        # Convert 'Exited' column to string type
+        df_clean['Exited'] = df_clean['Exited'].astype(str)
+        
+        attr_list = ['Geography', 'Gender', 'HasCrCard', 'IsActiveMember', 'NumOfProducts', 'Tenure']
+        fig, axarr = plt.subplots(2, 3, figsize=(15, 8))  # Adjusted figsize for better spacing
+        for ind, item in enumerate(attr_list):
+            sns.countplot(x=item, hue='Exited', data=df_clean, ax=axarr[ind//3][ind%3])
+            axarr[ind//3][ind%3].legend(loc='upper right', title='Exited')  # Adjust legend location and title
+        fig.subplots_adjust(hspace=0.7)
+        plt.show()
+        ```
+   ![](./media/new11.png)
+        ![](./media/new12.png)
 
 24. Show the frequency distribution of numerical attributes using
     histogram. Select the code cell and click on the **play** button to
