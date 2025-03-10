@@ -82,20 +82,20 @@ with *notebooks*, *experiments*, and *models* in Microsoft Fabric.
 
      ![](./media/image10.png)
 
-6.  On **Power BI Home** page, click on the **Account manager** on the
+6.  On **Fabric** page, click on the **Account manager** on the
     right side. In the Account manager blade, navigate and
     select **Start trial as shown in the below image.**
 
-     ![](./media/image11.png)
+     ![](./media/a2.png)
 
 7.  If prompted, agree to the terms and then select **Activate**.
 
-     ![](./media/image12.png)
+     ![](./media/a3.png)
 
 8.  Once your trial capacity is ready, you receive a confirmation
     message. Select **Fabric Home Page** to begin working in Fabric.
 
-      ![](./media/image13.png)
+      ![](./media/a4.png)
 
 9.  Open your Account manager again. Notice that you now have a heading
     for **Trial status**. Your Account manager keeps track of the number
@@ -109,21 +109,11 @@ with *notebooks*, *experiments*, and *models* in Microsoft Fabric.
 Before working with data in Fabric, create a workspace with the Fabric
 trial enabled.
 
-1.  In the **Microsoft Fabric** home page, select the **Power BI**
-    template.
+1.  In the Workspaces pane Select **+New workspace**.
 
-     ![](./media/image15.png)
+     ![](./media/a5.png)
 
-2.  In the **Power BI Home** page menu bar on the left,
-    select **Workspaces** (the icon looks similar to 🗇).
-
-     ![](./media/image16.png)
-
-3.  In the Workspaces pane Select **+** **New workspace**.
-
-     ![](./media/image17.png)
-
-4.  In the **Create a workspace tab**, enter the following details and
+2.  In the **Create a workspace tab**, enter the following details and
     click on the **Apply** button.
 
     |	                      |                                                   |
@@ -145,28 +135,22 @@ Now that you have a workspace, it’s time to switch to the Data
 science experience in the portal and create a data lakehouse for the
 data files you’re going to analyze.
 
-1.  At the bottom left of the Power BI portal, select the **Power
-    BI** icon and switch to the **Data Engineering** experience.
+1.  In the **Fabric** **Home** page, select **+New item** and select  **Lakehouse** tile.
 
-     ![](./media/image21.png)
+      ![](./media/a6.png)
 
-2.  In the **Synapse** **Data engineering** **Home** page, select
-    **Lakehouse** under **New** pane.
-
-      ![](./media/image22.png)
-
-3.  In the **New lakehouse** dialog box, enter
+2.  In the **New lakehouse** dialog box, enter
     **+++TrainModel_Lakehouse+++** in the **Name** field, click on the
     **Create** button.
 
       ![](./media/image23.png)
 
-4.  A new empty lakehouse will be created. You need to ingest some data
+3.  A new empty lakehouse will be created. You need to ingest some data
     into the **TrainModel_Lakehouse** for analysis.
 
      ![](./media/image24.png)
 
-5.  Wait for few minutes, you’ll will receive a notification stating -
+4.  Wait for few minutes, you’ll will receive a notification stating -
     **Successfully created SQL endpoint**.
 
      ![](./media/image25.png)
@@ -176,29 +160,21 @@ data files you’re going to analyze.
 To train a model, you can create a notebook. Notebooks provide an
 interactive environment in which you can write and run code (in multiple
 languages) as experiments.
+1.	In the Lakehouse page, dropdown the **Open notebook** and select **New notebook**. 
 
-1.  At the bottom left of the TrainModel_Lakehouse page, select
-    the **Data engineering** icon and switch to the **Data
-    science** experience.
+     ![](./media/a7.png)
 
-    ![](./media/image26.png)
-
-2.  In the **Synapse Data Science** **Home** page, select
-    **Notebook** under current workspace of **TrainModel_FabricXX.**
-
-     ![](./media/image27.png)
-
-3.  After a few seconds, a new notebook containing a single cell will
+2.  After a few seconds, a new notebook containing a single cell will
     open. Notebooks are made up of one or more cells that can
     contain **code** or **markdown** (formatted text).
 
-      ![](./media/image28.png)
+      ![](./media/a8.png)
 
-4.  Select the first cell (which is currently a code cell), and then
+3.  Select the first cell (which is currently a code cell), and then
     in the dynamic tool bar at its top-right, use the **M↓** button to
     convert the cell to a markdown cell.
 
-      ![](./media/image29.png)
+      ![](./media/a9.png)
       ![](./media/image30.png)
 
 When the cell changes to a markdown cell, the text it contains is
@@ -221,31 +197,15 @@ the Azure Open Datasets. After loading the data, you’ll convert the data
 to a Pandas dataframe: a common structure for working with data in rows
 and columns.
 
-1.  In the **Lakehouse explorer** section, select Lakehouses and click
-    on the **Add** button under the **Add lakehouse** to add a
-    lakehouse.
 
-      ![](./media/image33.png)
-
-      ![](./media/image34.png)
-
-2.  In **Add lakehouse** dialog box, select **Existing lakehouse** radio
-    button and select **Add**.
-
-      ![](./media/image35.png)
-3.  In **Choose the data you want to connect** page, select your
-    lakehouse i.e., **TrainModel_Lakehouse**, then click on the
-    **Add** button.
-      ![](./media/image36.png)
-
-4.  In your notebook, use the **+ Code** icon below the latest cell
+1.  In your notebook, use the **+ Code** icon below the latest cell
     output to add a new code cell to the notebook.
 
    **Tip**: To see the **+ Code** icon, move the mouse to just below and
    to the left of the output from the current cell. Alternatively, in the
    menu bar, on the **Edit** tab, select **+ Add code cell**.
 
-5.  Enter the following code in it:
+2.  Enter the following code in it:
    
       ```
       # Azure storage access info for open dataset diabetes
@@ -264,7 +224,7 @@ and columns.
       ```
      ![](./media/image37.png)
 
-6.  Use the **▷ Run cell** button on the left of the cell to run it.
+3.  Use the **▷ Run cell** button on the left of the cell to run it.
     Alternatively, you can press **SHIFT** + **ENTER** on your keyboard
     to run a cell.
 
@@ -275,21 +235,21 @@ and columns.
      first run in the session can take a minute or so to complete.
      Subsequent runs will be quicker.
 
-7.  Use the **+ Code** icon below the cell output to add a new code cell
+4.  Use the **+ Code** icon below the cell output to add a new code cell
     to the notebook, and enter the following code in it. Use the **▷ Run
     cell** button on the left of the cell to run it
     
      ```
      display(df)
      ```
-9.  When the cell command has completed, review the output below the
+5.  When the cell command has completed, review the output below the
     cell, which should look similar to this:
 
      ![](./media/image39.png)
 
     The output shows the rows and columns of the diabetes dataset
 
-10.  The data is loaded as a Spark dataframe. Scikit-learn will expect
+6.  The data is loaded as a Spark dataframe. Scikit-learn will expect
     the input dataset to be a Pandas dataframe. Run the code below to
     convert your dataset to a Pandas dataframe:
     
