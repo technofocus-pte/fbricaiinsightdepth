@@ -194,18 +194,9 @@ reports.
 
       ![](./media/image24.png)
 
-5.  You’ll be directed to Power BI Home page.
+9.  In the Workspaces pane, click on **+New workspace** button.
 
-      ![](./media/image25.png)
-
-8.  Go back to **Power BI** window. On the left side navigation menu of
-    Power BI Home page, navigate and click on **Workspaces**.
-
-     ![](./media/image26.png)
-
-9.  In the Workspaces pane, click on **+** **New workspace** button.
-
-      ![](./media/image27.png)
+      ![](./media/a1.png)
 
 10. In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
@@ -226,19 +217,11 @@ reports.
 
 ## **Task 4: Create a lakehouse and create a notebook**
 
-1.  In the **AI-Fabric-XXX** page, click on the **Power BI** icon
-    located at the bottom left and select **Data Engineering** under
-    Synapse.
+2.  In the **Fabric** **Home** page, select **+New item**  and **Lakehouse** to create a lakehouse.
 
-      ![](./media/image30.png)
+      ![](./media/a2.png)
 
-2.  In the **Synapse** **Data Engineering** **Home** page,
-    select **Lakehouse** to create a lakehouse.
-
-      ![](./media/image31.png)
-
-3.  In the **New lakehouse** dialog box, enter
-    **+++AI_Fabric_lakehouseXX+++** in the **Name** field, click on the
+3.  In the **New lakehouse** dialog box, enter **+++AI_Fabric_lakehouseXX+++** in the **Name** field, click on the
     **Create** button and open the new lakehouse.
 
     **Note**: Ensure to remove space before **AI_Fabric_lakehouseXX**.
