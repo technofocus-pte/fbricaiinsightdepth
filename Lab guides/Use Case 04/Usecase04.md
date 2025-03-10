@@ -48,7 +48,7 @@ capacity in the Azure portal.
 ## Task 0: Redeem Azure Pass
 
 1.  Open a new tab on your browser and enter the following link in the
-    address bar: <https://www.microsoftazurepass.com/>
+    address bar: ++https://www.microsoftazurepass.com/+++
 
 2.  Then, click on the **Start button.**
 
@@ -57,8 +57,7 @@ capacity in the Azure portal.
 **Note**: Do not use your Company/Work Account to login to redeem the
 Azure Pass, another Azure Pass will not be issued.
 
-3.  Click on the **Resources** tab of the Lab VM and enter the **Office
-    365 tenant credentials** to **Sign In**.
+3.  Click on the **Resources** tab of the Lab VM and enter the **Office 365 tenant credentials** to **Sign In**.
 
      ![](./media/image7.png)
 
