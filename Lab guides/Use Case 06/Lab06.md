@@ -356,14 +356,9 @@ reports.
 
       ![](./media/image52.png)
 
-6. Go back to **Power BI** window. On the left side navigation menu of
-    Power BI Home page, navigate and click on **Workspaces**.
+6. In the Workspaces pane, click on **+** **New workspace** tile.
 
-     ![](./media/image53.png)
-
-7. In the Workspaces pane, click on **+** **New workspace** button.
-
-     ![](./media/image54.png)
+     ![](./media/a1.png)
 
 8. In the **Create a workspace** pane that appears on the right side,
     enter the following details, and click on the **Apply** button.
@@ -383,30 +378,24 @@ reports.
 
 ## **Task 7: Create a lakehouse**
 
-1.  In the **Document Intelligence-FabricXX** page, click on the **Power
-    BI** icon located at the bottom left and select **Data Engineering**
-    under Synapse.
-
-       ![](./media/image59.png)
-
-2.  In the **Synapse** **Data Engineering** **Home** page,
+1.  In the **Synapse** **Data Engineering** **Home** page,
     select **Lakehouse** to create a lakehouse.
 
       ![](./media/image60.png)
 
-3.  In the **Synapse Data Engineering Home** page, select **Lakehouse**
+2.  In the **Synapse Data Engineering Home** page, select **Lakehouse**
     to create a lakehouse.
 
       ![](./media/image61.png)
 
-4.  In the **New lakehouse** dialog box, enter +++data_lakehouse+++ in
+3.  In the **New lakehouse** dialog box, enter **+++data_lakehouse+++** in
     the **Name** field, click on the **Create** button and open the new
     lakehouse.
 
   **Note**: Ensure to remove space before **data_lakehouse**.
       ![](./media/image62.png)
 
-5.  You will see a notification stating **Successfully created SQL
+4.  You will see a notification stating **Successfully created SQL
     endpoint**.
 
       ![](./media/image63.png)
