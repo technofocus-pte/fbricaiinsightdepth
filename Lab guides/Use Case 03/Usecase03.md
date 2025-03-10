@@ -68,7 +68,7 @@ Name, Sales, Quantity, Discount, Profit.
 7.  In the **Data-ScienceXX** workspace page, click on the drop-down
     arrow in the **+New** button, then select **Import notebook.**
 
-      ![](./media/image6.png)
+      ![](./media/a1.png)
 
 8.  On the **Import status pane that appears on the right side, click on
     Upload button** and then browse to **C:\Labfiles\data-science** and
