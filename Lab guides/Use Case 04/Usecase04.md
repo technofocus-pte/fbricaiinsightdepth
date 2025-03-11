@@ -95,53 +95,7 @@ Azure Pass, another Azure Pass will not be issued.
 
       ![](./media/image15.png)
 
-## Task 1: Sign in to Power BI account and sign up for the free [Microsoft Fabric trial](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial)
-
-1.  Open your browser, navigate to the address bar, and type or paste
-    the following URL: +++https://app.fabric.microsoft.com/+++ then press
-    the **Enter** button.
-
-      ![](./media/image16.png)
-
-2.  In the **Microsoft Fabric** window, enter your given credentials,
-    and click on the **Submit** button.
-
-      ![](./media/image17.png)
-
-3.  Then, In the **Microsoft** window enter the password and click on
-    the **Sign in** button.
-
-     ![](./media/image18.png)
-
-4.  In **Stay signed in?** window, click on the **Yes** button.
-
-     ![](./media/image19.png)
-5.  You’ll be directed to Power BI Home page.
-
-      ![](./media/image20.png)
-
-6.  On **Power BI Home** page, click on the **Account manager** on the
-    right side. In the Account manager blade, navigate and
-    select **Start trial as shown in the below image.**
-
-      ![](./media/image21.png)
-
-7.  If prompted, agree to the terms and then select **Start trial**.
-
-      ![](./media/image22.png)
-
-8.  Once your trial capacity is ready, you receive a confirmation
-    message. Select **Fabric Home Page** to begin working in Fabric.
-
-     ![](./media/image23.png)
-9.  Open your Account manager again. Notice that you now have a heading
-    for **Trial status**. Your Account manager keeps track of the number
-    of days remaining in your trial. You will also see the countdown in
-    your Fabric menu bar when you work in a product experience.
-
-      ![](./media/image24.png)
-
-## Task 2: Create Fabric Capacity using Azure portal 
+## Task 1: Create Fabric Capacity using Azure portal 
 
 Microsoft Fabric is deployed to an Azure Active Directory tenant. Within
 each Fabric tenant, Fabric capacities can be created to group resources
